@@ -8,7 +8,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Recreaux">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
+            android:name=".ChatList"
+            android:exported="false" />
+        <activity
+            android:name=".FriendRequest"
+            android:exported="false" />
+        <activity
+            android:name=".FriendList"
+            android:exported="false" />
+        <activity
+            android:name=".OtherProfile"
+            android:exported="false" />
+        <activity
+            android:name=".FriendProfile"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".MyProfile"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
