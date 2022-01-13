@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".CreateEventActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/V_CreateEvent_Header"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#67DE73"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TV_CreateEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Create Event"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/V_CreateEvent_Header"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="Event icon:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/V_CreateEvent_Header" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:text="Event name"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IV_CreateEventIcon" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event date:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateEventName" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Time:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateEventDate" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Description:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateEventTime" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Tags:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateEventDescription" />
+
+            <TextView
+                android:id="@+id/TV_CreateEventLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Location:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateEventTags" />
+
+            <ImageView
+                android:id="@+id/IV_CreateEventIcon"
+                android:layout_width="62dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="24dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventIcon"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
+                android:id="@+id/ET_CreateEventName"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventName"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_CreateEventDate"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Date"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventDate"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_CreateEventTime"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Time"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventTime"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_CreateEventDescription"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventDescription"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_CreateEventTags"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Tags"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventTags"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_CreateEventLocation"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Location"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_CreateEventLocation"
+                tools:ignore="TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/IV_CreateMapPreview"
+                android:layout_width="349dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:background="#9F7474"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateEventLocation" />
+
+            <Button
+                android:id="@+id/btnCreateEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="159dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="153dp"
+                android:layout_marginBottom="15dp"
+                android:background="#67DE73"
+                android:text="Create Event"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.568"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IV_CreateMapPreview"
+                tools:ignore="TextContrastCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

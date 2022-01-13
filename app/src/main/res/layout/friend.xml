@@ -32,6 +32,7 @@
                     android:id="@+id/TV_Friend_Name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="Keeme"
                     android:textColor="@color/black"
                     android:textSize="26sp"
@@ -43,7 +44,7 @@
                     android:id="@+id/TV_Friend_Residence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Malaysia"
+                    android:text="Seremban"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/TV_Friend_Name" />
@@ -52,16 +53,20 @@
                     android:id="@+id/Btn_Friend_Confirm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginBottom="4dp"
                     android:background="#67DE73"
                     android:text="Confirm"
+                    app:layout_constraintBottom_toBottomOf="@+id/TV_Friend_Residence"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/TV_Friend_Residence"
                     tools:ignore="TextContrastCheck" />
 
                 <Button
                     android:id="@+id/Btn_Friend_Delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"
                     android:background="#E5E5E5"
                     android:text="Delete"
                     android:textColor="#000000"
