@@ -16,32 +16,53 @@
             android:name=".ChatList"
             android:exported="false" />
         <activity
-            android:name=".FriendRequest"
+            android:name=".CreateEventActivity"
             android:exported="false" />
         <activity
-            android:name=".FriendList"
+            android:name=".CreateReport"
             android:exported="false" />
         <activity
-            android:name=".OtherProfile"
-            android:exported="false" />
-        <activity
-            android:name=".FriendProfile"
+            android:name=".EditEventActivity"
             android:exported="false" />
         <activity
             android:name=".EditProfile"
-            android:exported="false" />
-        <activity
-            android:name=".MyProfile"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FriendList"
+            android:exported="false" />
+        <activity
+            android:name=".FriendProfile"
+            android:exported="false" />
+        <activity
+            android:name=".FriendRequest"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyProfile"
+            android:exported="false"/>
+        <activity
+            android:name=".OtherProfile"
+            android:exported="false"/>
+        <activity
+            android:name=".PostEventViewActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ViewEvent"
+            android:exported="false"/>
+        <activity
+            android:name=".ViewEventCreator"
+            android:exported="false"/>
+        <activity
+            android:name=".ViewReportActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

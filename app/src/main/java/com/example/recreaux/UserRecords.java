@@ -1,9 +1,6 @@
 package com.example.recreaux;
 
-import com.example.recreaux.UserContract;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class UserRecords implements Serializable {
     private int userIconID;
@@ -13,8 +10,13 @@ public class UserRecords implements Serializable {
     private String userFullName;
     private String userBio;
     private String userPhoneNumber;
+    private String userEmail;
+    private String userPassword;
     private int userID;
 
+    public UserRecords(){
+
+    }
 
     public int getUserIconID() {
         return userIconID;
@@ -72,6 +74,22 @@ public class UserRecords implements Serializable {
         this.userPhoneNumber = userPhoneNumber;
     }
 
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
     public int getUserID() {
         return userID;
     }
@@ -80,14 +98,4 @@ public class UserRecords implements Serializable {
         this.userID = userID;
     }
 
-    public String toString(){
-        return UserContract.User.COLUMN_userID+": "+this.userID+","+
-                UserContract.User.COLUMN_userIconID+": "+this.userIconID+","+
-                UserContract.User.COLUMN_userNickname+": "+this.userNickname+","+
-                UserContract.User.COLUMN_userResidence+": "+this.userResidence+","+
-                UserContract.User.COLUMN_userInterests+": "+this.userInterests+","+
-                UserContract.User.COLUMN_userFullName+": "+this.userFullName+","+
-                UserContract.User.COLUMN_userBio+": "+this.userBio+","+
-                UserContract.User.COLUMN_userPhoneNumber+": "+this.userPhoneNumber;
-    }
 }

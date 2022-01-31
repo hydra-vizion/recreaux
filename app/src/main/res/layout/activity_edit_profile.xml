@@ -7,13 +7,214 @@
     android:background="#FFFFFF"
     tools:context=".EditProfile">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/V_EditProfile_Head">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/ET_EditProfile_Interests"
+                android:layout_width="345dp"
+                android:layout_height="50dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Interests"
+                android:inputType="textPersonName"
+                android:textColor="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_InterestsTitle" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_NicknameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="19dp"
+                android:text="Nickname:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_ChangePictureTitle" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_BioTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="11dp"
+                android:text="Bio:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_FullName" />
+
+            <Button
+                android:id="@+id/Btn_EditProfile_ChangeImage"
+                android:layout_width="134dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:background="#EAEAEA"
+                android:text="Change Image"
+                android:textColor="#333333"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_ResidenceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="13dp"
+                android:text="Residence:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Nickname" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_FullNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="11dp"
+                android:text="Full Name:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Interests" />
+
+            <EditText
+                android:id="@+id/ET_EditProfile_Residence"
+                android:layout_width="345dp"
+                android:layout_height="50dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Residence"
+                android:inputType="textPersonName"
+                android:textColor="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_ResidenceTitle" />
+
+            <EditText
+                android:id="@+id/ET_EditProfile_PhoneNumber"
+                android:layout_width="345dp"
+                android:layout_height="50dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="textPersonName"
+                android:textColor="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_PhoneNumberTitle" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_InterestsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="11dp"
+                android:text="Interests:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Residence" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_PhoneNumberTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="11dp"
+                android:text="Phone Number:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Bio" />
+
+            <Button
+                android:id="@+id/Btn_EditProfile_Confirm"
+                android:layout_width="133dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="12dp"
+                android:background="#67DE73"
+                android:text="Confirm"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_PhoneNumber" />
+
+            <EditText
+                android:id="@+id/ET_EditProfile_FullName"
+                android:layout_width="345dp"
+                android:layout_height="50dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:textColor="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_FullNameTitle" />
+
+            <TextView
+                android:id="@+id/TV_EditProfile_ChangePictureTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Change Picture:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/ET_EditProfile_Bio"
+                android:layout_width="345dp"
+                android:layout_height="50dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Bio"
+                android:inputType="textPersonName"
+                android:textColor="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_BioTitle" />
+
+            <EditText
+                android:id="@+id/ET_EditProfile_Nickname"
+                android:layout_width="345dp"
+                android:layout_height="50dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Nickname"
+                android:inputType="textPersonName"
+                android:textColor="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_NicknameTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
     <View
         android:id="@+id/V_EditProfile_Head"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#67DE73"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,198 +229,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_ChangePictureTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:text="Change Picture:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/V_EditProfile_Head" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_NicknameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="15dp"
-        android:text="Nickname:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_ChangePictureTitle" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_ResidenceTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:text="Residence:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Nickname" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_InterestsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:text="Interests:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Residence" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_FullNameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:text="Full Name:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Interests" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_BioTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:text="Bio:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_FullName" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_PhoneNumberTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:text="Phone Number:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_Bio" />
-
-    <Button
-        android:id="@+id/Btn_EditProfile_ChangeImage"
-        android:layout_width="127dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:background="#EAEAEA"
-        android:text="Change Image"
-        android:textColor="#333333"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/TV_EditProfile_ChangePictureTitle"
-        app:layout_constraintTop_toBottomOf="@+id/V_EditProfile_Head" />
-
-    <EditText
-        android:id="@+id/ET_EditProfile_Nickname"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:background="#EAEAEA"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nickname"
-        android:textColor="#333333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_NicknameTitle" />
-
-    <EditText
-        android:id="@+id/ET_EditProfile_Residence"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:background="#EAEAEA"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Residence"
-        android:textColor="#333333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_ResidenceTitle" />
-
-    <EditText
-        android:id="@+id/ET_EditProfile_Interests"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:background="#EAEAEA"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Interests"
-        android:textColor="#333333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_InterestsTitle" />
-
-    <EditText
-        android:id="@+id/ET_EditProfile_FullName"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:background="#EAEAEA"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Full Name"
-        android:textColor="#333333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_FullNameTitle" />
-
-    <EditText
-        android:id="@+id/ET_EditProfile_Bio"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:background="#EAEAEA"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Bio"
-        android:textColor="#333333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_BioTitle" />
-
-    <EditText
-        android:id="@+id/ET_EditProfile_PhoneNumber"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:background="#EAEAEA"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Phone Number"
-        android:textColor="#333333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_PhoneNumberTitle" />
-
-    <Button
-        android:id="@+id/Btn_EditProfile_Confirm"
-        android:layout_width="100dp"
-        android:layout_height="46dp"
-        android:background="#67DE73"
-        android:text="Confirm"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_PhoneNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
