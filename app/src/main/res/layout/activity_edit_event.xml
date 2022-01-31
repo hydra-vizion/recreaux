@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".EditEventActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/V_EditEvent_Header"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#67DE73"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TV_EditEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Edit Event"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/V_EditEvent_Header"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TV_EditEventIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:text="Event icon:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/V_EditEvent_Header" />
+
+            <TextView
+                android:id="@+id/TV_EditEventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:text="Event name"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IV_EditEventIcon" />
+
+            <TextView
+                android:id="@+id/TV_EditEventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event date:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditEventName" />
+
+            <TextView
+                android:id="@+id/TV_EditEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Time:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditEventDate" />
+
+            <TextView
+                android:id="@+id/TV_EditEventDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Description:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditEventTime" />
+
+            <TextView
+                android:id="@+id/TV_EditEventTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Tags:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditEventDescription" />
+
+            <TextView
+                android:id="@+id/TV_EditEventLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="15dp"
+                android:text="Event Location:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditEventTags" />
+
+            <ImageView
+                android:id="@+id/IV_EditEventIcon"
+                android:layout_width="62dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="24dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventIcon"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
+                android:id="@+id/ET_EditEventName"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventName"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_EditEventDate"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Date"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventDate"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_EditEventTime"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Time"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventTime"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_EditEventDescription"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventDescription"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_EditEventTags"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Tags"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventTags"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/ET_EditEventLocation"
+                android:layout_width="348dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EAEAEA"
+                android:ems="10"
+                android:hint="Location"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#858585"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_EditEventLocation"
+                tools:ignore="TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/IV_EditMapPreview"
+                android:layout_width="349dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:background="#9F7474"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ET_EditEventLocation" />
+
+            <Button
+                android:id="@+id/btnEditEventConfirm"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="15dp"
+                android:background="#67DE73"
+                android:text="Confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IV_EditMapPreview"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/btnEditEventDelete"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="216dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginBottom="15dp"
+                android:background="#67DE73"
+                android:text="Delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IV_EditMapPreview"
+                tools:ignore="TextContrastCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
