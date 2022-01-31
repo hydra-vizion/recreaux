@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_main.xml" value="0.24094202898550723" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_post_event_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_search.xml" value="0.35260416666666666" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_venue.xml" value="0.36666666666666664" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/itemhorizontal.xml" value="0.5" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/search_item_place.xml" value="0.5" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/venuedetailsverticals.xml" value="0.33" />
       </map>
     </option>

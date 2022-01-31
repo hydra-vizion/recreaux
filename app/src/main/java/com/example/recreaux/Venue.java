@@ -31,10 +31,10 @@ public class Venue extends AppCompatActivity {
         }
 
 
-        LinearLayout venueDetails = findViewById(R.id.venueDetails);
+        LinearLayout venueDetails = findViewById(R.id.venueScroll);
         LayoutInflater inflater2 = LayoutInflater.from(this);
 
-        for(int i = 0; i < 6; i++){
+        for(int i = 0; i < 10; i++){
             View view2 = inflater2.inflate(R.layout.venuedetailsverticals, venueDetails,false);
 
             TextView textView2 = view2.findViewById(R.id.textDetails);
