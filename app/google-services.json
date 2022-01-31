@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "289205369689",
+    "firebase_url": "https://recreaux-892a5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "recreaux-892a5",
+    "storage_bucket": "recreaux-892a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289205369689:android:d86e6fc97fca774ee32a48",
+        "android_client_info": {
+          "package_name": "com.example.groupproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289205369689-00sk7e7tjlmk1vgdah6ghe0uvu04s0m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc-VUyt7tvAp-Iae114vEcDU-xVd4MRFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289205369689-00sk7e7tjlmk1vgdah6ghe0uvu04s0m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289205369689:android:ad3b53360a931a14e32a48",
+        "android_client_info": {
+          "package_name": "com.example.recreaux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289205369689-00sk7e7tjlmk1vgdah6ghe0uvu04s0m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc-VUyt7tvAp-Iae114vEcDU-xVd4MRFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289205369689-00sk7e7tjlmk1vgdah6ghe0uvu04s0m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
