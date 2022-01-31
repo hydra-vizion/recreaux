@@ -9,9 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="570dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/V_EditProfile_Head">
 
@@ -59,9 +59,9 @@
             <Button
                 android:id="@+id/Btn_EditProfile_ChangeImage"
                 android:layout_width="134dp"
-                android:layout_height="57dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="36dp"
                 android:background="#EAEAEA"
                 android:text="Change Image"
                 android:textColor="#333333"
@@ -103,6 +103,7 @@
                 android:inputType="textPersonName"
                 android:textColor="#333333"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_ResidenceTitle" />
 
@@ -147,11 +148,12 @@
                 android:id="@+id/Btn_EditProfile_Confirm"
                 android:layout_width="133dp"
                 android:layout_height="57dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="4dp"
                 android:background="#67DE73"
                 android:text="Confirm"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ET_EditProfile_PhoneNumber" />
 
@@ -172,8 +174,8 @@
                 android:id="@+id/TV_EditProfile_ChangePictureTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="18dp"
                 android:text="Change Picture:"
                 android:textColor="#000000"
                 android:textSize="20sp"

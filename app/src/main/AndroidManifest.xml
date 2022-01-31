@@ -16,7 +16,7 @@
             android:name=".ChatList"
             android:exported="false" />
         <activity
-            android:name=".CreateEventActivity"
+            android:name=".EditProfile"
             android:exported="false" />
         <activity
             android:name=".CreateReport"
@@ -25,7 +25,7 @@
             android:name=".EditEventActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfile"
+            android:name=".CreateEventActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
