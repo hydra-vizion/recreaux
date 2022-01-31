@@ -12,7 +12,7 @@ import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.google.zxing.Result;
 
-public class MainActivity extends AppCompatActivity {
+public class scanqrcode extends AppCompatActivity {
     private CodeScanner mCodeScanner;
 
     @Override
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(MainActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(scanqrcode.this, result.getText(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -51,4 +51,5 @@ public class MainActivity extends AppCompatActivity {
         mCodeScanner.releaseResources();
         super.onPause();
     }
+
 }
