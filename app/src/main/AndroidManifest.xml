@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".Forgot_Password"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".Chat"
             android:exported="false" />
         <activity
@@ -28,13 +37,13 @@
             android:name=".FriendProfile"
             android:exported="false" />
         <activity
-            android:name=".EditProfile"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MyProfile"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SignUp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

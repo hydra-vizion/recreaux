@@ -1,9 +1,6 @@
 package com.example.recreaux;
 
-import com.example.recreaux.UserContract;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class UserRecords implements Serializable {
     private int userIconID;
@@ -80,14 +77,5 @@ public class UserRecords implements Serializable {
         this.userID = userID;
     }
 
-    public String toString(){
-        return UserContract.User.COLUMN_userID+": "+this.userID+","+
-                UserContract.User.COLUMN_userIconID+": "+this.userIconID+","+
-                UserContract.User.COLUMN_userNickname+": "+this.userNickname+","+
-                UserContract.User.COLUMN_userResidence+": "+this.userResidence+","+
-                UserContract.User.COLUMN_userInterests+": "+this.userInterests+","+
-                UserContract.User.COLUMN_userFullName+": "+this.userFullName+","+
-                UserContract.User.COLUMN_userBio+": "+this.userBio+","+
-                UserContract.User.COLUMN_userPhoneNumber+": "+this.userPhoneNumber;
-    }
+
 }

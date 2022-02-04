@@ -130,19 +130,5 @@ public class EventRecords implements Serializable {
         this.eventGallery = eventGallery;
     }
 
-    @Override
-    public String toString(){
-        return com.example.recreaux.EventContract.Event.COLUMN_iconID+": "+this.iconID+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventName+": "+this.eventName+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventDate+": "+this.eventDate+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventTime+": "+this.eventTime+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventDescription+": "+this.eventDescription+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventTags+": "+this.eventTags+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventLocation+": "+this.eventLocation+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventLocationLatitude+": "+this.eventLocationLatitude+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventLocationLongitude+": "+this.eventLocationLongitude+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventParticipants+": "+this.eventParticipants+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventPostReport+": "+this.eventPostReport+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventGallery+": "+this.eventGallery;
-    }
+
 }
