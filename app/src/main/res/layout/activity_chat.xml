@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/V_Chat_Input"
-        android:layout_width="320dp"
+        android:layout_width="321dp"
         android:layout_height="65dp"
         android:layout_marginStart="1dp"
         android:ems="10"
@@ -49,12 +49,14 @@
         android:text="Send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/V_Chat_Input" />
 
     <ListView
         android:id="@+id/V_Chat_ChatFlow"
-        android:layout_width="409dp"
-        android:layout_height="594dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="71dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/V_Chat_Head" />
 </androidx.constraintlayout.widget.ConstraintLayout>
