@@ -31,8 +31,8 @@
 
     <ListView
         android:id="@+id/LV_FriendList_List"
-        android:layout_width="409dp"
-        android:layout_height="659dp"
+        android:layout_width="match_parent"
+        android:layout_height="570dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

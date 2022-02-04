@@ -31,12 +31,12 @@
 
     <ListView
         android:id="@+id/LV_FriendList_List"
-        android:layout_width="409dp"
-        android:layout_height="659dp"
+        android:layout_width="match_parent"
+        android:layout_height="570dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/V_FriendList_Head" >
-
-    </ListView>
+        app:layout_constraintTop_toBottomOf="@+id/V_FriendList_Head"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

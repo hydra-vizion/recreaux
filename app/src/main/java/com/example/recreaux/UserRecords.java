@@ -10,8 +10,13 @@ public class UserRecords implements Serializable {
     private String userFullName;
     private String userBio;
     private String userPhoneNumber;
+    private String userEmail;
+    private String userPassword;
     private int userID;
 
+    public UserRecords(){
+
+    }
 
     public int getUserIconID() {
         return userIconID;
@@ -69,6 +74,22 @@ public class UserRecords implements Serializable {
         this.userPhoneNumber = userPhoneNumber;
     }
 
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
     public int getUserID() {
         return userID;
     }
@@ -76,6 +97,5 @@ public class UserRecords implements Serializable {
     public void setUserID(int userID) {
         this.userID = userID;
     }
-
 
 }

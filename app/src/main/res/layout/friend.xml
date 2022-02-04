@@ -51,9 +51,9 @@
 
                 <Button
                     android:id="@+id/Btn_Friend_Confirm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="96dp"
+                    android:layout_width="66dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="88dp"
                     android:layout_marginBottom="4dp"
                     android:background="#67DE73"
                     android:text="Confirm"
@@ -63,8 +63,8 @@
 
                 <Button
                     android:id="@+id/Btn_Friend_Delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="66dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginBottom="4dp"
                     android:background="#E5E5E5"

@@ -130,5 +130,4 @@ public class EventRecords implements Serializable {
         this.eventGallery = eventGallery;
     }
 
-
 }
