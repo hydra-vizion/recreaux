@@ -65,8 +65,10 @@ public class Venue extends AppCompatActivity {
                             dataSnapshot.child("VenueTag").getValue().toString()
                     };
                     int[] drawble = {
-                            R.drawable.ic_launcher_foreground,
-
+                            R.drawable.location,
+                            R.drawable.baseline_schedule_black_48,
+                            R.drawable.globe,
+                            R.drawable.tag
                     };
 
                     for(int i = 0; i < 4; i++){
@@ -76,7 +78,7 @@ public class Venue extends AppCompatActivity {
                         textView2.setText(contentDetails[i]);
 
                         ImageView imageView = view2.findViewById(R.id.iconDetails);
-                        imageView.setImageResource(R.drawable.ic_launcher_foreground);
+                        imageView.setImageResource(drawble[i]);
                         venueDetails.addView(view2);
                     }
                 }
