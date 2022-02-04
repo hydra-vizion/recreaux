@@ -7,11 +7,33 @@
     android:background="#FFFFFF"
     tools:context=".EditProfile">
 
+    <View
+        android:id="@+id/V_EditProfile_Head"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#67DE73"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_EditProfile_HeadText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/V_EditProfile_Head"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="570dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/V_EditProfile_Head">
 
@@ -148,10 +170,12 @@
                 android:id="@+id/Btn_EditProfile_Confirm"
                 android:layout_width="133dp"
                 android:layout_height="57dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="90dp"
                 android:background="#67DE73"
                 android:text="Confirm"
                 android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
@@ -209,27 +233,5 @@
                 app:layout_constraintTop_toBottomOf="@+id/TV_EditProfile_NicknameTitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <View
-        android:id="@+id/V_EditProfile_Head"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#67DE73"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/TV_EditProfile_HeadText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/V_EditProfile_Head"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

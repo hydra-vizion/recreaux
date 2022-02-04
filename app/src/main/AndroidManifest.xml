@@ -16,7 +16,7 @@
             android:name=".ChatList"
             android:exported="false" />
         <activity
-            android:name=".EditProfile"
+            android:name=".CreateEventActivity"
             android:exported="false" />
         <activity
             android:name=".CreateReport"
@@ -25,8 +25,8 @@
             android:name=".EditEventActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateEventActivity"
-            android:exported="true" >
+            android:name=".EditProfile"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,22 +47,22 @@
             android:exported="false" />
         <activity
             android:name=".MyProfile"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".OtherProfile"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".PostEventViewActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ViewEvent"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ViewEventCreator"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ViewReportActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

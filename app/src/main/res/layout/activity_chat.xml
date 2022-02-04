@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/V_Chat_Input"
-        android:layout_width="270dp"
+        android:layout_width="321dp"
         android:layout_height="65dp"
         android:layout_marginStart="1dp"
         android:ems="10"

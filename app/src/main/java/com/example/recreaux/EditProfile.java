@@ -15,7 +15,7 @@ public class EditProfile extends AppCompatActivity {
 EditText userNickname,userResidence,userInterests,userFullName,userBio,userPhoneNumber;
 Button btnConfirm;
 UserRecords userRecords;
-DatabaseReference reff;
+DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +26,9 @@ DatabaseReference reff;
         userFullName=(EditText)findViewById(R.id.ET_EditProfile_FullName);
         userBio=(EditText)findViewById(R.id.ET_EditProfile_Bio);
         userPhoneNumber=(EditText)findViewById(R.id.ET_EditProfile_PhoneNumber);
-        btnConfirm=(Button)findViewById(R.id.Btn_EditProfile_ChangeImage);
+        btnConfirm=(Button)findViewById(R.id.Btn_EditProfile_Confirm);
         userRecords=new UserRecords();
-        reff= FirebaseDatabase.getInstance().getReference().child("User");
+        ref= FirebaseDatabase.getInstance().getReference().child("User").child("4");
 
         btnConfirm.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -39,7 +39,7 @@ DatabaseReference reff;
                 userRecords.setUserFullName(userFullName.getText().toString().trim());
                 userRecords.setUserBio(userBio.getText().toString().trim());
                 userRecords.setUserPhoneNumber(userPhoneNumber.getText().toString().trim());
-                reff.setValue(userRecords);
+                ref.setValue(userRecords);
                 Toast.makeText(EditProfile.this,"Data inserted succesfully",Toast.LENGTH_LONG).show();
             }
         });
