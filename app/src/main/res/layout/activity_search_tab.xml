@@ -46,7 +46,8 @@
         android:id="@+id/searchList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#8BB83030"
-        android:layout_below="@id/tab_search"/>
+        android:layout_below="@id/tab_search"
+        android:background="#FFFFFF"
+        android:divider="#00000000" />
 
 </RelativeLayout>
