@@ -19,6 +19,7 @@
         android:background="@drawable/roundedsearch"
         android:ems="15"
         android:hint="Search"
+        android:inputType="textNoSuggestions"
         android:paddingLeft="100px"
         android:textColor="#737373"
         android:textColorHighlight="#000000"

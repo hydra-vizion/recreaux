@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -40,8 +41,11 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
     //widgets
     private EditText mSearchParam;
     private ListView mListView;
+
     //vars
-    private List<String> mUserList;
+    //private List<String> mUserList;
+
+    private List<SearchContent> mContentList;
     private int currentTabPos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +71,14 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
         tabLayout.addTab(tabLayout.newTab().setText("Event"));
         tabLayout.addTab(tabLayout.newTab().setText("Place"));
         initTextListener();
+        hideSoftKeyboard();
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 pager2.setCurrentItem(tab.getPosition());
                 currentTabPos = tab.getPosition();
-                mUserList.clear();
+               //mUserList.clear();
+                mContentList.clear();
                 updateUserName();
             }
 
@@ -96,12 +102,14 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
         });
     }
     private void searchForMatch(String keyword){
-        mUserList.clear();
+        //mUserList.clear();
+        mContentList.clear();
         updateUserName();
+
         if(keyword.length() <= 2 ){
 
         }else{
-            DatabaseReference referenceUser = FirebaseDatabase.getInstance().getReference("User");
+            DatabaseReference referenceUser = FirebaseDatabase.getInstance().getReference("Users");
             DatabaseReference referenceEvent = FirebaseDatabase.getInstance().getReference("Event");
             DatabaseReference referenceVenue = FirebaseDatabase.getInstance().getReference("Venue");
 
@@ -113,10 +121,15 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                         String[] key;
 
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
-                            key = singleSnapshot.child("userInterests").getValue().toString().toLowerCase().split(",");
+                            key = singleSnapshot.child("Interests").getValue().toString().toLowerCase().split(",");
                             for (int index = 0; index < key.length; index++){
                                 if(key[index].contains(keyword)){
-                                    mUserList.add(singleSnapshot.child("userNickname").getValue().toString());
+                                    mContentList.add(new SearchContent(
+                                            singleSnapshot.child("Name").getValue().toString(),
+                                            singleSnapshot.child("Username").getValue().toString(),
+                                            singleSnapshot.child("UserImage").getValue().toString(),
+                                            "user",
+                                            singleSnapshot.getKey()));
                                     break;
                                 }
                             }
@@ -138,7 +151,12 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                             key = singleSnapshot.child("Event Tags").getValue().toString().toLowerCase().split(",");
                             for (int index = 0; index < key.length; index++){
                                 if(key[index].contains(keyword)){
-                                    mUserList.add(singleSnapshot.child("Event Name").getValue().toString());
+                                    mContentList.add(new SearchContent(
+                                            singleSnapshot.child("Event Name").getValue().toString(),
+                                            singleSnapshot.child("Event Description").getValue().toString(),
+                                            singleSnapshot.child("Event Icon").getValue().toString(),
+                                            "event",
+                                            singleSnapshot.getKey()));
                                     break;
                                 }
                             }
@@ -160,7 +178,12 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                             key = singleSnapshot.child("VenueTag").getValue().toString().toLowerCase().split(",");
                             for (int index = 0; index < key.length; index++){
                                 if(key[index].contains(keyword)){
-                                    mUserList.add(singleSnapshot.child("VenueName").getValue().toString());
+                                    mContentList.add(new SearchContent(
+                                            singleSnapshot.child("VenueName").getValue().toString(),
+                                            singleSnapshot.child("VenueAddress").getValue().toString(),
+                                            singleSnapshot.child("VenueImage").getValue().toString(),
+                                            "venue",
+                                            singleSnapshot.getKey()));
                                     break;
                                 }
                             }
@@ -175,16 +198,26 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                 });
 
             }
-            if(currentTabPos == 1){
+            else if(currentTabPos == 1){
                 referenceUser.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
-                            if(singleSnapshot.child("userNickname").getValue().toString().toLowerCase().contains(keyword)){
-                                mUserList.add(singleSnapshot.child("userNickname").getValue().toString());
+                            if(singleSnapshot.child("Name").getValue().toString().toLowerCase().contains(keyword)){
+                                mContentList.add(new SearchContent(
+                                        singleSnapshot.child("Name").getValue().toString(),
+                                        singleSnapshot.child("Username").getValue().toString(),
+                                        singleSnapshot.child("UserImage").getValue().toString(),
+                                        "user",
+                                        singleSnapshot.getKey()));
                             }
-                            else if(singleSnapshot.child("userFullName").getValue().toString().toLowerCase().contains(keyword)){
-                                mUserList.add(singleSnapshot.child("userNickname").getValue().toString());
+                            else if(singleSnapshot.child("Username").getValue().toString().toLowerCase().contains(keyword)){
+                                mContentList.add(new SearchContent(
+                                        singleSnapshot.child("Name").getValue().toString(),
+                                        singleSnapshot.child("Username").getValue().toString(),
+                                        singleSnapshot.child("UserImage").getValue().toString(),
+                                        "user",
+                                        singleSnapshot.getKey()));
                             }
                         }
                         updateUserName();
@@ -196,13 +229,19 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                     }
                 });
             }
-            if(currentTabPos == 2){
+            else if(currentTabPos == 2){
                 referenceEvent.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+
                             if(singleSnapshot.child("Event Name").getValue().toString().toLowerCase().contains(keyword)){
-                                mUserList.add(singleSnapshot.child("Event Name").getValue().toString());
+                                mContentList.add(new SearchContent(
+                                            singleSnapshot.child("Event Name").getValue().toString(),
+                                            singleSnapshot.child("Event Description").getValue().toString(),
+                                            singleSnapshot.child("Event Icon").getValue().toString(),
+                                            "event",
+                                            singleSnapshot.getKey()));
                             }
                         }
                         updateUserName();
@@ -214,13 +253,18 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                     }
                 });
             }
-            if(currentTabPos == 3){
+            else if(currentTabPos == 3){
                 referenceVenue.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
                             if(singleSnapshot.child("VenueName").getValue().toString().toLowerCase().contains(keyword)){
-                                mUserList.add(singleSnapshot.child("VenueName").getValue().toString());
+                                mContentList.add(new SearchContent(
+                                        singleSnapshot.child("VenueName").getValue().toString(),
+                                        singleSnapshot.child("VenueAddress").getValue().toString(),
+                                        singleSnapshot.child("VenueImage").getValue().toString(),
+                                        "venue",
+                                        singleSnapshot.getKey()));
                             }
                         }
                         updateUserName();
@@ -236,7 +280,9 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
     }
 
     private void initTextListener(){
-        mUserList =  new ArrayList<>();
+        //mUserList =  new ArrayList<>();
+
+        mContentList =  new ArrayList<>();
         mSearchParam.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -250,6 +296,7 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
 
             @Override
             public void afterTextChanged(Editable s) {
+
                 String text = mSearchParam.getText().toString().toLowerCase(Locale.getDefault());
                 searchForMatch(text);
             }
@@ -257,10 +304,10 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
     }
 
     private void updateUserName(){
-        LinkedHashSet<String> lhSetColors = new LinkedHashSet<String>(mUserList);
-        String[] newArray = lhSetColors.toArray(new String[ lhSetColors.size() ]);
-        List<String> list = Arrays.asList(newArray);
-        CustomListAdapter listAdapter = new CustomListAdapter(this , R.layout.custom_list , list);
+//        LinkedHashSet<SearchContent> lhSet = new LinkedHashSet<SearchContent>(mContentList);
+//        SearchContent[] newArray = lhSet.toArray(new SearchContent[ lhSet.size() ]);
+//        List<SearchContent> list = Arrays.asList(newArray);
+        CustomListAdapter listAdapter = new CustomListAdapter(this , R.layout.custom_list , mContentList);
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mUserList);
         mListView.setAdapter(listAdapter);
     }
@@ -269,12 +316,13 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
 
         Toast.makeText(SearchTab.this,"pos"+position,Toast.LENGTH_LONG).show();
 
-        // Then you start a new Activity via Intent
-//        Intent intent = new Intent();
-//        intent.setClass(this, ListItemDetail.class);
-//        intent.putExtra("position", position);
-//        // Or / And
-//        intent.putExtra("id", id);
-//        startActivity(intent);
+        //
+    }
+
+    public void hideSoftKeyboard(){
+        if(getCurrentFocus() != null){
+            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+        }
     }
 }
