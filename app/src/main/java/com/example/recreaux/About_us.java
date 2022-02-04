@@ -33,7 +33,7 @@ public class About_us extends AppCompatActivity {
     public void ClickDashboard(View view){
         hamburger_nav.redirectActivity(this,Dashboard.class);
     }
-    public void CLickAboutUs(View view){
+    public void ClickAboutUs(View view){
         recreate();
     }
     public void ClickLogout(View view){

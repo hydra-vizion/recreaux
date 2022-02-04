@@ -34,12 +34,14 @@ public class Dashboard extends AppCompatActivity {
     public void ClickDashboard(View view){
         recreate();
     }
-    public void CLickAboutUs(View view){
+    public void ClickAboutUs(View view){
         hamburger_nav.redirectActivity(this,About_us.class);
     }
     public void ClickLogout(View view){
         hamburger_nav.logout(this);
     }
+
+
     @Override
     protected void onPause(){
         super.onPause();
