@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity implements  View.OnClickListener {
@@ -25,16 +26,15 @@ public class SignUp extends AppCompatActivity implements  View.OnClickListener {
     public TextView textView;
     private EditText editTextName, editTextUsername,editTextEmail,editTextPassword;
     private Button registerUser;
-
     private FirebaseAuth mAuth;
-
+    DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
         setContentView(R.layout.activity_sign_up);
-
+        reff= FirebaseDatabase.getInstance().getReference().child("Friends");
 
         textView = findViewById(R.id.TV_login_nav);
 
@@ -84,6 +84,8 @@ public class SignUp extends AppCompatActivity implements  View.OnClickListener {
                 break;
         }
     }
+
+
 
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
@@ -137,8 +139,11 @@ public class SignUp extends AppCompatActivity implements  View.OnClickListener {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
+                                    reff= FirebaseDatabase.getInstance().getReference().child("Friends").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                    reff.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(true);
                                     Toast.makeText(SignUp.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(SignUp.this,Login.class));
+
 
                                 }else{
                                     Toast.makeText(SignUp.this,"Failed to register user",Toast.LENGTH_LONG).show();

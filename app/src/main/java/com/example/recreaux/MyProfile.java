@@ -7,13 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,8 +25,6 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
     private FirebaseUser user;
     private DatabaseReference reference;
 
-
-
     private String userID;
 
     FirebaseAuth mAuth;
@@ -39,14 +34,18 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
 
         userID = user.getUid();
 
         final TextView FullNameTextView= (TextView) findViewById(R.id.TV_MyProfile_FullName);
+        final TextView NickNameTextView= (TextView) findViewById(R.id.TV_MyProfile_Nickname);
+        final TextView BioTextView= (TextView) findViewById(R.id.TV_MyProfile_Bio);
+        final TextView PhoneNumberTextView= (TextView) findViewById(R.id.TV_MyProfile_PhoneNumber);
+        final TextView ResidenceTextView= (TextView) findViewById(R.id.TV_MyProfile_Residence);
+        final TextView InterestsTextView= (TextView) findViewById(R.id.TV_MyProfile_Interests);
+        ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_MyProfile_Search);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -54,9 +53,25 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
                 User userProfile = dataSnapshot.getValue(User.class);
 
                 if(userProfile != null){
-                    String fullName = userProfile.Name;
-
-                    FullNameTextView.setText(fullName);
+                    if(!dataSnapshot.child("Bio").exists()){
+                        String fullName = userProfile.Name;
+                        FullNameTextView.setText(fullName);
+                        String nickName = userProfile.Username;
+                        NickNameTextView.setText(nickName);}
+                    else{
+                        String fullName = userProfile.Name;
+                        FullNameTextView.setText(fullName);
+                        String nickName = userProfile.Username;
+                        NickNameTextView.setText(nickName);
+                        String bio = userProfile.Bio;
+                        BioTextView.setText(bio);
+                        String phoneNumber = userProfile.PhoneNumber;
+                        PhoneNumberTextView.setText(phoneNumber);
+                        String residence = userProfile.Residence;
+                        ResidenceTextView.setText(residence);
+                        String interests = userProfile.Interests;
+                        InterestsTextView.setText(interests);
+                    }
                 }
             }
 
@@ -72,7 +87,14 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         gotoEdit = (Button) findViewById(R.id.Btn_MyProfile_Edit);
         gotoEdit.setOnClickListener(this);
 
-
+        SearchButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MyProfile.this,OtherProfile.class);
+                intent.putExtra("id","Ub7oIFwv88h6INPAWO04s4F9asi2");
+                startActivity(intent);
+            }
+        });
 
 
     }
