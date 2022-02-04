@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".About_us"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
             android:name=".Forgot_Password"
             android:exported="false" />
         <activity
@@ -43,7 +52,7 @@
             android:name=".MyProfile"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".hamburger_nav"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
