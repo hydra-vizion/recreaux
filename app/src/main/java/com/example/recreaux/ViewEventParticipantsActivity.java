@@ -14,8 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.recreaux.EventUserListAdapter;
-import com.example.recreaux.MyProfile;
-import com.example.recreaux.OtherProfile;
 import com.example.recreaux.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -68,15 +66,15 @@ public class ViewEventParticipantsActivity extends AppCompatActivity {
                 String item = (String) parent.getAdapter().getItem(position);
                 //Toast.makeText(getApplicationContext(),"Position "+item, Toast.LENGTH_SHORT).show();
                 if(item.equals(currentuserid)){
-                    Intent intent = new Intent(ViewEventParticipantsActivity.this, MyProfile.class);
-                    intent.putExtra("id",item);
-                    startActivity(intent);
+                    //Intent intent = new Intent(ViewEventParticipantsActivity.this,MyProfile.class);
+                    //intent.putExtra("id",item);
+                    //startActivity(intent);
                     Toast.makeText(getApplicationContext(),"My Profile "+item, Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(),"Other Profile "+item, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(ViewEventParticipantsActivity.this, OtherProfile.class);
-                    intent.putExtra("id",item);
-                    startActivity(intent);
+                    //Intent intent = new Intent(ViewEventParticipantsActivity.this,OtherProfile.class);
+                    //intent.putExtra("id",item);
+                    //startActivity(intent);
                 }
             }
         });
@@ -118,7 +116,7 @@ public class ViewEventParticipantsActivity extends AppCompatActivity {
 
                         }
                     }
-                    EventUserListAdapter adapter = new EventUserListAdapter(ViewEventParticipantsActivity.this, R.layout.user_record_view_event,values,false);
+                    EventUserListAdapter adapter = new EventUserListAdapter(ViewEventParticipantsActivity.this, R.layout.user_record_view_event,values,false,eventid);
                     LV_ViewEventParticipants.setAdapter(adapter);
                 }
             }
@@ -143,7 +141,7 @@ public class ViewEventParticipantsActivity extends AppCompatActivity {
                             }
                         }
                     }
-                    EventUserListAdapter adapter = new EventUserListAdapter(ViewEventParticipantsActivity.this,R.layout.user_record_view_event,values,true);
+                    EventUserListAdapter adapter = new EventUserListAdapter(ViewEventParticipantsActivity.this,R.layout.user_record_view_event,values,true,eventid);
                     LV_ViewEventParticipants.setAdapter(adapter);
                 }
             }

@@ -51,6 +51,7 @@ public class hamburger_nav extends AppCompatActivity {
     }
     public void ClickCreateEvent(View view){redirectActivity(this,CreateEventActivity.class);}
     public void ClickMyEvents(View view){redirectActivity(this,MyEventsActivity.class);}
+    public void ClickNotifications(View view){redirectActivity(this,Notification.class);}
     public void ClickFriendsList(View view){redirectActivity(this,FriendList.class);}
     public void ClickGenerateQR(View view){redirectActivity(this,MyQRCode.class);}
     public void ClickScanQR(View view){redirectActivity(this,ScanQRCode.class);}

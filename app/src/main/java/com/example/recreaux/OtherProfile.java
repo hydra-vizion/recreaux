@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,8 +30,8 @@ import java.util.Base64;
 
 public class OtherProfile extends AppCompatActivity {
     Button btnAdd;
-    DatabaseReference reff;
-    String otherid;
+    DatabaseReference refNotification,refUser;
+    String otherid,username,userimage;
     private Button Logout,gotoEdit;
     private FirebaseUser user;
     private DatabaseReference reference,referenceFriends;
@@ -58,6 +60,8 @@ public class OtherProfile extends AppCompatActivity {
         final TextView InterestsTextView= (TextView) findViewById(R.id.TV_OtherProfile_Interests);
         ImageView ProfileImageView= (ImageView) findViewById(R.id.IV_OtherProfile_ProfilePic);
         ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_OtherProfile_Search);
+
+
 
         referenceFriends.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -117,11 +121,39 @@ public class OtherProfile extends AppCompatActivity {
             }
         });
 
+        refUser=FirebaseDatabase.getInstance().getReference("Users").child(userID);
+
+        refNotification= FirebaseDatabase.getInstance().getReference("Notifications").child(otherid);
+
+        refUser.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                username=task.getResult().child("Username").getValue().toString();
+                userimage=task.getResult().child("UserImage").getValue().toString();
+
+            }
+        });
+
+
         btnAdd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 FirebaseDatabase.getInstance().getReference().child("Friends").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(otherid).setValue(true);
                 FirebaseDatabase.getInstance().getReference().child("Friends").child(otherid).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(true);
+
+                refNotification.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        int TotalNotification= (int)task.getResult().getChildrenCount();
+                        TotalNotification++;
+                        refNotification.child("Noti_"+TotalNotification).child("Message").setValue("You are now friends with "+username+".");
+                        refNotification.child("Noti_"+TotalNotification).child("Seen").setValue(false);
+                        refNotification.child("Noti_"+TotalNotification).child("UserImage").setValue(userimage);
+                        refNotification.child("Noti_"+TotalNotification).child("UserID").setValue(userID);
+                    }
+                });
+
+
                 btnAdd.setClickable(false);
                 btnAdd.setText("Friends");
                 btnAdd.setBackgroundColor(btnAdd.getContext().getResources().getColor(R.color.white));
