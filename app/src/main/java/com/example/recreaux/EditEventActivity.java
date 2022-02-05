@@ -1,6 +1,7 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.InputType;
@@ -87,6 +89,7 @@ public class EditEventActivity extends AppCompatActivity {
             sentEvent = new com.example.recreaux.EventRecords();
             eventid=getIntent().getExtras().getInt("eventid");
             ref.child("Event").child(String.valueOf(eventid)).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if(task.isComplete() && task.isSuccessful()){
@@ -116,6 +119,7 @@ public class EditEventActivity extends AppCompatActivity {
             });
 
             ref.child("Event").child(String.valueOf(eventid)).child("Event MapPreview").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     String imej = task.getResult().getValue().toString();
@@ -333,6 +337,7 @@ public class EditEventActivity extends AppCompatActivity {
         return dest;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void updateRecord2(View v){
 
         et_EditEventName = findViewById(R.id.ET_EditEventName);

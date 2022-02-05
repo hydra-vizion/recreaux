@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.recreaux">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,10 +10,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".ViewEventParticipantsActivity"
+            android:name=".Nav_to_Nav"
             android:exported="false" />
         <activity
-            android:name=".EventMapsActivity"
+            android:name=".Search"
+            android:exported="false" />
+        <activity
+            android:name=".Venue"
+            android:exported="false" />
+        <activity
+            android:name=".FriendList"
+            android:exported="false" />
+        <activity
+            android:name=".hamburger_nav"
+            android:exported="false" />
+        <activity
+            android:name=".FriendProfile"
+            android:exported="false" />
+        <activity
+            android:name=".FriendRequest"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanQRCode"
+            android:exported="false" />
+        <activity
+            android:name=".OtherProfile"
+            android:exported="false" />
+        <activity
+            android:name=".PostEventViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewEvent"
+            android:exported="false" />
+        <activity
+            android:name=".ViewEventCreator"
+            android:exported="false" />
+        <activity
+            android:name=".ViewReportActivity"
             android:exported="false" />
         <activity
             android:name=".Forgot_Password"
@@ -41,7 +73,37 @@
             android:name=".EditEventActivity"
             android:exported="false" />
         <activity
+            android:name=".GenerateQRCode"
+            android:exported="false" />
+        <activity
+            android:name=".MyQRCode"
+            android:exported="false" />
+        <activity
+            android:name=".MyProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".About_us"
+            android:exported="false" />
+        <activity
+            android:name=".ViewEventParticipantsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventMapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchTab"
+            android:exported="true" />
+        <activity
+            android:name=".MyEventsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,55 +111,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FriendList"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".FriendProfile"
-            android:exported="false" />
-        <activity
-            android:name=".FriendRequest"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MyProfile"
-            android:exported="false" />
-        <activity
-            android:name=".OtherProfile"
-            android:exported="false" />
-        <activity
-            android:name=".PostEventViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ViewEvent"
-            android:exported="false" />
-        <activity
-            android:name=".ViewEventCreator"
-            android:exported="false" />
-        <activity
-            android:name=".ViewReportActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MyEventsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".About_us"
-            android:exported="false" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="false" />
-        <activity
-            android:name=".hamburger_nav"
-            android:exported="false" />
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
     </application>
 
 </manifest>

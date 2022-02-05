@@ -1,6 +1,7 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.RectF;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
@@ -80,6 +82,7 @@ public class CreateReport extends AppCompatActivity {
             sentEvent = new com.example.recreaux.EventRecords();
             eventid=getIntent().getExtras().getInt("eventid");
             ref.child("Event").child(String.valueOf(eventid)).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if(task.isComplete() && task.isSuccessful()){
@@ -140,6 +143,7 @@ public class CreateReport extends AppCompatActivity {
         }
 
         btn_PostAddReport.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Report Added", Toast.LENGTH_SHORT).show();

@@ -1,16 +1,15 @@
 package com.example.recreaux;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class hamburger_nav extends AppCompatActivity {
     //
@@ -27,7 +26,8 @@ public class hamburger_nav extends AppCompatActivity {
 
     }
 
-    public void ClickMenu(View view){ openDrawer(drawerLayout);
+    public void ClickMenu(View view){
+        openDrawer(drawerLayout);
     }
 
     public static void openDrawer(DrawerLayout drawerLayout) {
@@ -35,7 +35,8 @@ public class hamburger_nav extends AppCompatActivity {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-    public void ClickLogo(View view){ closeDrawer(drawerLayout);
+    public void ClickLogo(View view){
+        closeDrawer(drawerLayout);
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
@@ -45,17 +46,16 @@ public class hamburger_nav extends AppCompatActivity {
 
     }
 
-    public void ClickHome(View view){ recreate();
+    public void ClickHome(View view){
+        recreate();
     }
 
-    public void ClickDashboard(View view){
-        redirectActivity(this,Dashboard.class);
-    }
-
-    public void ClickAboutUs(View view){
-        redirectActivity(this,About_us.class);
-    }
-
+    public void ClickCreateEvent(View view){redirectActivity(this,CreateEventActivity.class);}
+    public void ClickMyEvents(View view){redirectActivity(this,MyEventsActivity.class);}
+    public void ClickFriendsList(View view){redirectActivity(this,FriendList.class);}
+    public void ClickChat(View view){redirectActivity(this,Chat.class);}
+    public void ClickFriendRequest(View view){redirectActivity(this,FriendRequest.class);}
+    public void ClickMyProfile(View view){redirectActivity(this,MyProfile.class);}
     public void ClickLogout(View view){
         logout(this);
     }
