@@ -55,6 +55,6 @@
         android:id="@+id/V_Chat_ChatFlow"
         android:layout_width="409dp"
         android:layout_height="594dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="71dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_Chat_HeadText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
