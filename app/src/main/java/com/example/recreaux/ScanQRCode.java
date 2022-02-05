@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -50,6 +52,15 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
                 //Intent intent = new Intent(ScanQRCode.this, my_events_event.class);
                 //startActivity(intent);
 
+                FirebaseDatabase.getInstance().getReference().child("Friends").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(result.getContents()).setValue(true);
+                FirebaseDatabase.getInstance().getReference().child("Friends").child(result.getContents()).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(true);
+
+                Intent intent = new Intent(ScanQRCode.this,OtherProfile.class);
+                intent.putExtra("id",result.getContents());
+                startActivity(intent);
+
+
+                /*
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(result.getContents());
                 builder.setTitle("Scanning Result");
@@ -68,6 +79,8 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+
+                */
             }
             else{
                 Toast.makeText(this,"No Results",Toast.LENGTH_LONG).show();

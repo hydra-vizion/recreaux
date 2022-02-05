@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MyProfile extends AppCompatActivity implements View.OnClickListener{
 
-    private Button Logout,gotoEdit;
+    private Button Logout,gotoEdit ;
     private FirebaseUser user;
     private DatabaseReference reference;
 
@@ -46,6 +46,7 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         final TextView ResidenceTextView= (TextView) findViewById(R.id.TV_MyProfile_Residence);
         final TextView InterestsTextView= (TextView) findViewById(R.id.TV_MyProfile_Interests);
         ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_MyProfile_Search);
+        
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
