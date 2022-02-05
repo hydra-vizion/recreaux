@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity implements  View.OnClickListener{
 
     public TextView textView,textView2;
     public EditText editTextPassword, editTextEmail;
-    private Button signIn,registerUser;
+    private Button signIn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -132,7 +132,7 @@ public class Login extends AppCompatActivity implements  View.OnClickListener{
             return;
         }
         if(password.length() < 6){
-            editTextPassword.setError("Please enter password atleast 6 characters long");
+            editTextPassword.setError("Please enter password at least 6 characters long");
             editTextPassword.requestFocus();
             return;
         }
