@@ -41,7 +41,7 @@ public class Venue extends AppCompatActivity {
 
 //       if(getIntent().getExtras() != null) {
 //            venueId=getIntent().getExtras().getInt("venueid");
-            venueId = 1;
+            venueId = 2;
 
             reference.child(String.valueOf(venueId)).addListenerForSingleValueEvent(new ValueEventListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
@@ -55,23 +55,24 @@ public class Venue extends AppCompatActivity {
                         View view = inflater.inflate(R.layout.itemhorizontal, gallery,false);
                         ImageView imageView = view.findViewById(R.id.imageView);
                         imageView.setImageBitmap(getImage(Base64.getDecoder().decode(dataSnapshot.child("VenueImages").child(String.valueOf(i+1)).getValue().toString())));
-                        //imageView.setImageResource(R.drawable.ic_launcher_background);
                         gallery.addView(view);
                     }
                     String[] contentDetails = {
                             dataSnapshot.child("VenueAddress").getValue().toString(),
                             dataSnapshot.child("VenueHours").getValue().toString(),
                             dataSnapshot.child("VenueWebsite").getValue().toString(),
-                            dataSnapshot.child("VenueTag").getValue().toString()
+                            dataSnapshot.child("VenueTag").getValue().toString(),
+                            dataSnapshot.child("VenueRating").getValue().toString()
                     };
                     int[] drawble = {
                             R.drawable.location,
                             R.drawable.baseline_schedule_black_48,
                             R.drawable.globe,
-                            R.drawable.tag
+                            R.drawable.tag,
+                            android.R.drawable.star_off
                     };
 
-                    for(int i = 0; i < 4; i++){
+                    for(int i = 0; i < 5; i++){
                         View view2 = inflater2.inflate(R.layout.venuedetailsverticals, venueDetails,false);
 
                         TextView textView2 = view2.findViewById(R.id.textDetails);
