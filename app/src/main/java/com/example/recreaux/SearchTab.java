@@ -121,6 +121,11 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                         String[] key;
 
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+                            try{
+                                singleSnapshot.child("Interests").getValue().toString().toLowerCase().split(",");
+                            }catch (Exception e){
+                                break;
+                            }
                             key = singleSnapshot.child("Interests").getValue().toString().toLowerCase().split(",");
                             for (int index = 0; index < key.length; index++){
                                 if(key[index].contains(keyword)){
@@ -148,6 +153,11 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                         String[] key;
 
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+                            try{
+                                singleSnapshot.child("Event Tags").getValue().toString().toLowerCase().split(",");
+                            }catch (Exception e){
+                                break;
+                            }
                             key = singleSnapshot.child("Event Tags").getValue().toString().toLowerCase().split(",");
                             for (int index = 0; index < key.length; index++){
                                 if(key[index].contains(keyword)){
@@ -175,6 +185,11 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
                         String[] key;
 
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+                            try{
+                                singleSnapshot.child("VenueTag").getValue().toString().toLowerCase().split(",");
+                            }catch (Exception e){
+                                break;
+                            }
                             key = singleSnapshot.child("VenueTag").getValue().toString().toLowerCase().split(",");
                             for (int index = 0; index < key.length; index++){
                                 if(key[index].contains(keyword)){
@@ -314,8 +329,29 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
 
-        Toast.makeText(SearchTab.this,"pos"+position,Toast.LENGTH_LONG).show();
+        //Toast.makeText(SearchTab.this,mContentList.get(position).id+"",Toast.LENGTH_LONG).show();
+        String ActivityType = mContentList.get(position).type;
 
+        if(ActivityType.equals("venue")){
+            Intent intent = new Intent(SearchTab.this,Venue.class);
+            intent.putExtra("venueid",mContentList.get(position).id);
+            startActivity(intent);
+        }
+        else if(ActivityType.equals("user")){
+//            Intent intent = new Intent(SearchTab.this,Venue.class);
+//            intent.putExtra("venueid",mContentList.get(position).id);
+//            startActivity(intent);
+        }
+        else if(ActivityType.equals("event")){
+//            Intent intent = new Intent(SearchTab.this,Venue.class);
+//            intent.putExtra("eventid",mContentList.get(position).id);
+//            startActivity(intent);
+        }
+
+
+//        Intent intent = new Intent(SearchTab.this,OtherProfile.class);
+//        intent.putExtra("id",otherid);
+//        startActivity(intent);
         //
     }
 

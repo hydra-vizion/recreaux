@@ -24,7 +24,7 @@ import java.util.Base64;
 
 public class Venue extends AppCompatActivity {
 
-    int venueId;
+    String venueId;
     TextView venName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,11 @@ public class Venue extends AppCompatActivity {
         LinearLayout venueDetails = findViewById(R.id.venueScroll);
         LayoutInflater inflater2 = LayoutInflater.from(this);
 
-//       if(getIntent().getExtras() != null) {
-//            venueId=getIntent().getExtras().getInt("venueid");
-            venueId = 2;
+       if(getIntent().getExtras() != null) {
+            venueId=getIntent().getExtras().getString("venueid");
+            //venueId = 2;
 
-            reference.child(String.valueOf(venueId)).addListenerForSingleValueEvent(new ValueEventListener() {
+            reference.child(venueId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -89,12 +89,7 @@ public class Venue extends AppCompatActivity {
 
                 }
             });
-
-
-
-
-
-        //}
+       }
 
 
 

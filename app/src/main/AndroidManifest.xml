@@ -13,10 +13,10 @@
             android:name=".Search"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Venue"
             android:exported="false" />
         <activity
-            android:name=".Venue"
+            android:name=".SearchTab"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

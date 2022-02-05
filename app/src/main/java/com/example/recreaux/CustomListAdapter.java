@@ -54,7 +54,7 @@ public class CustomListAdapter extends ArrayAdapter<SearchContent> {
             text.setText(sc.get(position).name);
             text2.setText(sc.get(position).desc);
             img.setImageBitmap(getImage(Base64.getDecoder().decode(sc.get(position).imageUrl)));
-            text.setBackgroundColor(Color.WHITE);
+            //text.setBackgroundColor(Color.WHITE);
         }
 
 

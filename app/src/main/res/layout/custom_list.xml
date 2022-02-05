@@ -5,7 +5,7 @@
     android:id="@+id/clickable_layout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/clickable"> >
+    android:background="@drawable/clickable">
 
     <TextView
         android:id="@+id/customListTV"
@@ -35,6 +35,5 @@
         android:layout_marginTop="38px"
         android:layout_marginEnd="19px"
         android:layout_marginBottom="19px"
-        app:cardCornerRadius="250dp"
         tools:srcCompat="@tools:sample/avatars" />
 </RelativeLayout>
