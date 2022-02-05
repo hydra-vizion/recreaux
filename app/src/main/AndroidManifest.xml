@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".Search"
+            android:name=".ViewEvent"
+            android:exported="false" />
+        <activity
+            android:name=".MyProfile"
+            android:exported="false" />
+        <activity
+            android:name=".OtherProfile"
             android:exported="false" />
         <activity
             android:name=".Venue"
