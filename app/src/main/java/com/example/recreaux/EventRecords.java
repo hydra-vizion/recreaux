@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class EventRecords implements Serializable {
-    private int iconID;
+    private byte[] iconID;
     private String eventName;
     private String eventDate;
     private String eventTime;
@@ -13,17 +13,24 @@ public class EventRecords implements Serializable {
     private String eventLocation;
     private String eventLocationLatitude;
     private String eventLocationLongitude;
-    private ArrayList<String> eventParticipants;
     private String eventPostReport;
-    private ArrayList<String> eventGallery;
     private int eventID;
-    private int eventCreatorID;
+    private String eventCreatorID;
+    private boolean eventstatus;
 
-    public int getEventCreatorID() {
+    public boolean getEventstatus() {
+        return eventstatus;
+    }
+
+    public void setEventstatus(boolean eventstatus) {
+        this.eventstatus = eventstatus;
+    }
+
+    public String getEventCreatorID() {
         return eventCreatorID;
     }
 
-    public void setEventCreatorID(int eventCreatorID) {
+    public void setEventCreatorID(String eventCreatorID) {
         this.eventCreatorID = eventCreatorID;
     }
 
@@ -35,10 +42,10 @@ public class EventRecords implements Serializable {
         this.eventID = eventID;
     }
 
-    public int getIconID() {
+    public byte[] getIconID() {
         return iconID;
     }
-    public void setIconID(int iconID) {
+    public void setIconID(byte[] iconID) {
         this.iconID = iconID;
     }
 
@@ -106,14 +113,6 @@ public class EventRecords implements Serializable {
         this.eventLocationLongitude = eventLocationLongitude;
     }
 
-    public ArrayList<String> getEventParticipants() {return eventParticipants; }
-
-
-    public void setEventParticipants(ArrayList<String> eventParticipants) {
-
-        this.eventParticipants = eventParticipants;
-    }
-
     public String getEventPostReport() {
         return eventPostReport;
     }
@@ -122,27 +121,4 @@ public class EventRecords implements Serializable {
         this.eventPostReport = eventPostReport;
     }
 
-    public ArrayList<String> getEventGallery() {
-        return eventGallery;
-    }
-
-    public void setEventGallery(ArrayList<String> eventGallery) {
-        this.eventGallery = eventGallery;
-    }
-
-    @Override
-    public String toString(){
-        return com.example.recreaux.EventContract.Event.COLUMN_iconID+": "+this.iconID+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventName+": "+this.eventName+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventDate+": "+this.eventDate+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventTime+": "+this.eventTime+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventDescription+": "+this.eventDescription+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventTags+": "+this.eventTags+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventLocation+": "+this.eventLocation+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventLocationLatitude+": "+this.eventLocationLatitude+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventLocationLongitude+": "+this.eventLocationLongitude+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventParticipants+": "+this.eventParticipants+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventPostReport+": "+this.eventPostReport+","+
-                com.example.recreaux.EventContract.Event.COLUMN_eventGallery+": "+this.eventGallery;
-    }
 }

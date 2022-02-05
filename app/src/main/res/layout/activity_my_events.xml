@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyEventsActivity">
+
+    <View
+        android:id="@+id/MyEventTitle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#67DE73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_MyEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="My Events"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/MyEventTitle"
+        app:layout_constraintTop_toTopOf="@+id/MyEventTitle" />
+
+    <TextView
+        android:id="@+id/TV_MyEventsEvents"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="Events"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MyEventTitle" />
+
+    <TextView
+        android:id="@+id/TV_MyEventsHistory"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="History"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MyEventTitle" />
+
+    <View
+        android:id="@+id/LineEvents"
+        android:layout_width="180dp"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_MyEventsEvents" />
+
+    <View
+        android:id="@+id/LineHistory"
+        android:layout_width="180dp"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_MyEventsHistory" />
+
+    <ListView
+        android:id="@+id/LV_MyEvents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LineEvents"
+        tools:listitem="@layout/event_record">
+
+    </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
