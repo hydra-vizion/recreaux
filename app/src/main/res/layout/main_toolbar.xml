@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -11,16 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="ClickMenu"
-        android:src="@drawable/ic_hamburger" />
+        android:src="@drawable/ic_hamburger"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Navigation Example"
-        android:textSize="20sp"
+        android:text="Home Page"
         android:textAlignment="center"
-        android:textColor="#636363" />
+        android:textColor="#636363"
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="wrap_content"

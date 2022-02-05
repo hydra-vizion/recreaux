@@ -1,6 +1,7 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -9,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -66,6 +68,7 @@ public class ViewReportActivity extends AppCompatActivity {
             sentEvent = new EventRecords();
             eventid=getIntent().getExtras().getInt("eventid");
             ref.child("Event").child(String.valueOf(eventid)).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if(task.isComplete() && task.isSuccessful()){

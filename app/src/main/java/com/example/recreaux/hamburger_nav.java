@@ -49,12 +49,11 @@ public class hamburger_nav extends AppCompatActivity {
     public void ClickHome(View view){
         recreate();
     }
-
     public void ClickCreateEvent(View view){redirectActivity(this,CreateEventActivity.class);}
     public void ClickMyEvents(View view){redirectActivity(this,MyEventsActivity.class);}
     public void ClickFriendsList(View view){redirectActivity(this,FriendList.class);}
-    public void ClickChat(View view){redirectActivity(this,Chat.class);}
-    public void ClickFriendRequest(View view){redirectActivity(this,FriendRequest.class);}
+    public void ClickGenerateQR(View view){redirectActivity(this,MyQRCode.class);}
+    public void ClickScanQR(View view){redirectActivity(this,ScanQRCode.class);}
     public void ClickMyProfile(View view){redirectActivity(this,MyProfile.class);}
     public void ClickLogout(View view){
         logout(this);

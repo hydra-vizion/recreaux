@@ -10,17 +10,17 @@
         android:layout_height="120dp"
         android:layout_margin="16dp"
         android:onClick="ClickLogo"
-        android:src="@drawable/ic_emo"
+        android:src="@drawable/navlogo"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I like MAD assignment very much"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="Navigation"
         android:textAlignment="center"
-        android:textColor="#636363" />
+        android:textColor="#636363"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:minHeight="48dp"
-        android:onClick="ClickFriendRequest"
+        android:onClick="ClickGenerateQR"
         android:orientation="horizontal">
 
         <TextView
@@ -55,7 +55,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Friend Requests"
+            android:text="Show QR Code"
             android:textColor="@color/black" />
     </LinearLayout>
 
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:minHeight="48dp"
-        android:onClick="ClickChat"
+        android:onClick="ClickScanQR"
         android:orientation="horizontal">
 
         <TextView
@@ -73,7 +73,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Chat"
+            android:text="Scan QR"
             android:textColor="@color/black" />
     </LinearLayout>
 
