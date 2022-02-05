@@ -1,14 +1,13 @@
 package com.example.recreaux;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,6 +17,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class ScanQRCode extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_QRScanner_Scan;
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,8 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
 
         btn_QRScanner_Scan = findViewById(R.id.btn_QRScanner_Scan);
         btn_QRScanner_Scan.setOnClickListener(this);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
 
     }
 
@@ -90,6 +92,30 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
         else{
             super.onActivityResult(requestCode,resultCode,data);
         }
+    }
+    public void ClickMenu(View view){
+        //Open drawer
+        hamburger_nav.openDrawer(drawerLayout);
+    }
 
+    public void ClickLogo(View view){
+        hamburger_nav.closeDrawer(drawerLayout);
+    }
+    public void ClickHome(View view){ hamburger_nav.redirectActivity(this,MyProfile.class); }
+    public void ClickDashboard(View view){ hamburger_nav.redirectActivity(this,Dashboard.class); }
+    public void ClickScanQR(View view){recreate();}
+    public void ClickAboutUs(View view){
+        hamburger_nav.redirectActivity(this,About_us.class);
+    }
+    public void ClickLogout(View view){
+        hamburger_nav.logout(this);
+    }
+
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        //Close drawer
+        hamburger_nav.closeDrawer(drawerLayout);
     }
 }

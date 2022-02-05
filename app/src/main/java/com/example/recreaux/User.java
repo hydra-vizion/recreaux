@@ -2,8 +2,8 @@ package com.example.recreaux;
 
 public class User {
 
-    public String Name,Username,email,UserImage,Residence,Interests,Bio,PhoneNumber;
-    public String Name,Username,email,IconID,Residence,Interests,Bio,PhoneNumber, UserQR;
+    public String Name,Username,email,UserImage,Residence,Interests,Bio,PhoneNumber, UserQR;
+
 
     public User(){
     }

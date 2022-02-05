@@ -1,10 +1,10 @@
 package com.example.recreaux;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class About_us extends AppCompatActivity {
 
@@ -39,6 +39,7 @@ public class About_us extends AppCompatActivity {
     public void ClickLogout(View view){
         hamburger_nav.logout(this);
     }
+    public void ClickScanQR(View view){hamburger_nav.redirectActivity(this,ScanQRCode.class);}
     @Override
     protected void onPause(){
         super.onPause();
