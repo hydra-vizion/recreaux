@@ -8,120 +8,164 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_margin="16dp"
+        android:layout_margin="0dp"
         android:onClick="ClickLogo"
-        android:src="@drawable/ic_emo"
+        android:src="@drawable/navlogo"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I like MAD assignment very much"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="Navigation"
         android:textAlignment="center"
-        android:textColor="#636363" />
-
+        android:textColor="#636363"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:onClick="ClickHome">
+        android:minHeight="48dp"
+        android:onClick="ClickMyProfile"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Home"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_home"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:onClick="ClickDashboard">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Dashboard"
-            android:textColor="@color/black"
-            android:padding="12dp"
-            android:layout_marginStart="16dp" />
-        
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_dashboard"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:onClick="ClickAboutUs">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="About Us"
-            android:textColor="@color/black"
-            android:padding="12dp"
             android:layout_marginStart="16dp"
-            />
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="My Profile"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="ClickNotifications"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_info"/>
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Notifications"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="ClickGenerateQR"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Show QR Code"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="ClickScanQR"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Scan QR"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="ClickFriendsList"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Friends List"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="ClickMyEvents"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="My Events"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:onClick="ClickCreateEvent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Create Event"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:onClick="ClickLogout">
+        android:minHeight="48dp"
+        android:onClick="ClickLogout"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_weight="1"
+            android:padding="12dp"
             android:text="Logout"
-            android:textColor="@color/black"
-            android:padding="12dp"
-            android:layout_marginStart="16dp"
-            />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_home"/>
-
-
+            android:textColor="@color/black" />
     </LinearLayout>
 
 </LinearLayout>

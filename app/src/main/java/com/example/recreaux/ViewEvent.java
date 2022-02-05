@@ -1,12 +1,14 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,8 +19,10 @@ import android.widget.Toast;
 
 import com.example.recreaux.EventMapsActivity;
 import com.example.recreaux.EventRecords;
+import com.example.recreaux.PostEventViewActivity;
 import com.example.recreaux.R;
 import com.example.recreaux.ViewEventParticipantsActivity;
+import com.example.recreaux.ViewReportActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,8 +57,8 @@ public class ViewEvent extends AppCompatActivity {
         btnJoinLeaveEvent = findViewById(R.id.btnJoinLeaveEvent);
         btnViewShareEvent = findViewById(R.id.btnViewShareEvent);
         //currentuserid ="OmnyApXKCAOdnll4Dc1RKoLLSKH3";
-        ref = FirebaseDatabase.getInstance().getReference();
         currentuserid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        ref = FirebaseDatabase.getInstance().getReference();
         TV_ViewEventName = findViewById(R.id.TV_ViewEventName);
         TV_ViewEventDate = findViewById(R.id.TV_ViewEventDate);
         TV_ViewEventTime = findViewById(R.id.TV_ViewEventTime);
@@ -78,10 +82,28 @@ public class ViewEvent extends AppCompatActivity {
             sentEvent = new EventRecords();
             eventid=getIntent().getExtras().getInt("eventid");
             ref.child("Event").child(String.valueOf(eventid)).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if(task.isComplete() && task.isSuccessful()){
                         DataSnapshot snapshot = task.getResult();
+
+                        if(!Boolean.parseBoolean(snapshot.child("Event Status").getValue().toString())){
+                            boolean hasreport;
+                            hasreport=snapshot.child("Event Report").exists();
+                            if (hasreport){
+                                Intent intent = new Intent(ViewEvent.this, ViewReportActivity.class);
+                                intent.putExtra("eventid",eventid);
+                                finish();
+                                startActivity(intent);
+                            }
+                            else{
+                                Intent intent = new Intent(ViewEvent.this, PostEventViewActivity.class);
+                                intent.putExtra("eventid",eventid);
+                                finish();
+                                startActivity(intent);
+                            }
+                        }
                         sentEvent.setEventID(Integer.valueOf(snapshot.child("Event ID").getValue().toString()));
                         sentEvent.setEventName(snapshot.child("Event Name").getValue().toString());
                         sentEvent.setEventDate(snapshot.child("Event Date").getValue().toString());
@@ -148,6 +170,7 @@ public class ViewEvent extends AppCompatActivity {
 
 
             ref.child("Event").child(String.valueOf(eventid)).child("Event MapPreview").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     String imej = task.getResult().getValue().toString();

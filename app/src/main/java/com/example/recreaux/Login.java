@@ -1,8 +1,5 @@
 package com.example.recreaux;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -13,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -144,7 +144,7 @@ public class Login extends AppCompatActivity implements  View.OnClickListener{
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if(user.isEmailVerified()){
-                        startActivity(new Intent(Login.this,MyProfile.class));
+                        startActivity(new Intent(Login.this,hamburger_nav.class));
                     }else{
                         user.sendEmailVerification();
                         Toast.makeText(Login.this,"Check your email to verify your account",Toast.LENGTH_LONG).show();

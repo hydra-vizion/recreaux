@@ -1,10 +1,10 @@
 package com.example.recreaux;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class Dashboard extends AppCompatActivity {
     //init var
@@ -27,10 +27,7 @@ public class Dashboard extends AppCompatActivity {
     public void ClickLogo(View view){
         hamburger_nav.closeDrawer(drawerLayout);
     }
-    public void ClickHome(View view){
-        //Redirect activity to home
-        hamburger_nav.redirectActivity(this,MyProfile.class);
-    }
+    public void ClickHome(View view){ hamburger_nav.redirectActivity(this,MyProfile.class); }
     public void ClickDashboard(View view){
         recreate();
     }
@@ -40,6 +37,7 @@ public class Dashboard extends AppCompatActivity {
     public void ClickLogout(View view){
         hamburger_nav.logout(this);
     }
+    public void ClickScanQR(View view){hamburger_nav.redirectActivity(this,ScanQRCode.class);}
 
 
     @Override

@@ -188,6 +188,7 @@ public class EditEventActivity extends AppCompatActivity {
         });
 
         btn_EditEventConfirm.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 //updateRecord(v);

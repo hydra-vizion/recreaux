@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".my_events_event">
+
+    <View
+        android:id="@+id/v_MyEvents_Head"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#67DE73" />
+
+    <TextView
+        android:id="@+id/TV_EditProfile_HeadText2"
+        android:layout_width="126dp"
+        android:layout_height="44dp"
+        android:layout_alignBottom="@+id/v_MyEvents_Head"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="My Events"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/L_Tab_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/v_MyEvents_Head"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:tabTextColor="#120F0F" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/VP_pagers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/L_Tab_Layout" />
+
+
+</RelativeLayout>
