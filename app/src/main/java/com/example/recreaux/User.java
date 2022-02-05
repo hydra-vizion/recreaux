@@ -2,7 +2,7 @@ package com.example.recreaux;
 
 public class User {
 
-    public String Name,Username,email,IconID,Residence,Interests,Bio,PhoneNumber;
+    public String Name,Username,email,UserImage,Residence,Interests,Bio,PhoneNumber;
 
     public User(){
     }
@@ -13,11 +13,11 @@ public class User {
         this.email = Email;
     }
 
-    public User(String Name,String Username, String Email,/*String IconID,*/String Residence,String Interests,String Bio,String PhoneNumber){
+    public User(String Name,String Username, String Email,String UserImage,String Residence,String Interests,String Bio,String PhoneNumber){
         this.Name = Name;
         this.Username = Username;
         this.email = Email;
-        //this.IconID = IconID;
+        this.UserImage = UserImage;
         this.Residence = Residence;
         this.Interests = Interests;
         this.Bio = Bio;

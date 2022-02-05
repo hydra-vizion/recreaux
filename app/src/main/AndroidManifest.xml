@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.recreaux">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,6 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+            android:name=".ViewEventParticipantsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventMapsActivity"
+            android:exported="false" />
         <activity
             android:name=".Forgot_Password"
             android:exported="false" />
@@ -72,6 +82,13 @@
         <activity
             android:name=".ViewReportActivity"
             android:exported="false" />
+        <activity
+            android:name=".MyEventsActivity"
+            android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
     </application>
 
 </manifest>
