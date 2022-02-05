@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+
+    android:background="#FFF7F7"
+    android:backgroundTint="#FFF9F9"
+    tools:context=".Search">
+
+    <SearchView
+        android:id="@+id/searchViewSearch"
+        android:layout_width="299dp"
+        android:layout_height="46dp"
+        android:background="#41D650"
+        android:bottomLeftRadius="10px"
+        android:bottomRightRadius="10dp"
+
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036">
+
+    </SearchView>
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_marginTop="4dp"
+        android:foregroundTint="#E81F1F"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:id="@+id/searchScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewSearch"
+        app:layout_constraintVertical_bias="0.01999998">
+
+        <Button
+            android:id="@+id/tagButton"
+            android:layout_width="102.5dp"
+            android:layout_height="50dp"
+            android:layout_weight="25"
+            android:background="#E8E8E8"
+            android:foreground="?attr/selectableItemBackground"
+
+            android:text="Tags"
+            android:textColor="#020202" />
+
+        <Button
+            android:id="@+id/peopleButton"
+            android:layout_width="102.5dp"
+            android:layout_height="50dp"
+            android:layout_weight="25"
+            android:background="#E8E8E8"
+            android:foreground="?attr/selectableItemBackground"
+
+            android:text="People"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/eventsButton"
+            android:layout_width="102.5dp"
+            android:layout_height="50dp"
+            android:layout_weight="25"
+            android:background="#E8E8E8"
+            android:foreground="?attr/selectableItemBackground"
+
+            android:text="Events"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/placesButton"
+            android:layout_width="98dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:background="#E8E8E8"
+            android:foreground="?attr/selectableItemBackground"
+
+            android:gravity="center"
+            android:text="Places"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

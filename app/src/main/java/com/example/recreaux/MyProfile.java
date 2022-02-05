@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,9 +22,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Base64;
+
 public class MyProfile extends AppCompatActivity implements View.OnClickListener{
 
-    private Button Logout,gotoEdit ;
+    private Button Logout,gotoEdit;
     private FirebaseUser user;
     private DatabaseReference reference;
 
@@ -45,8 +50,8 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         final TextView PhoneNumberTextView= (TextView) findViewById(R.id.TV_MyProfile_PhoneNumber);
         final TextView ResidenceTextView= (TextView) findViewById(R.id.TV_MyProfile_Residence);
         final TextView InterestsTextView= (TextView) findViewById(R.id.TV_MyProfile_Interests);
-        ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_MyProfile_Search);
-        
+        ImageView ProfileImageView= (ImageView) findViewById(R.id.IV_MyProfile_ProfilePic);
+        ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_OtherProfile_Search);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -60,6 +65,8 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
                         String nickName = userProfile.Username;
                         NickNameTextView.setText(nickName);}
                     else{
+                        Bitmap icon= getImage(Base64.getDecoder().decode(userProfile.UserImage));
+                        ProfileImageView.setImageBitmap(icon);
                         String fullName = userProfile.Name;
                         FullNameTextView.setText(fullName);
                         String nickName = userProfile.Username;
@@ -91,8 +98,8 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         SearchButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(MyProfile.this,OtherProfile.class);
-                intent.putExtra("id","Ub7oIFwv88h6INPAWO04s4F9asi2");
+                Intent intent = new Intent(MyProfile.this,FriendList.class);
+                //intent.putExtra("id","Ub7oIFwv88h6INPAWO04s4F9asi2");
                 startActivity(intent);
             }
         });
@@ -111,6 +118,11 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
                 break;
         }
     }
+
+    public static Bitmap getImage(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
+    }
+
 
     private void userLogout() {
         FirebaseAuth.getInstance().signOut();

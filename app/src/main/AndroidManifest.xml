@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.recreaux">
 
-    <uses-permission android:name="android.permission.CAMERA" />
-
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,81 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
         <activity
-            android:name=".FriendList"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".FriendProfile"
-            android:exported="false" />
-        <activity
-            android:name=".FriendRequest"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ScanQRCode"
-            android:exported="false" />
-        <activity
-            android:name=".OtherProfile"
-            android:exported="false" />
-        <activity
-            android:name=".PostEventViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ViewEvent"
-            android:exported="false" />
-        <activity
-            android:name=".ViewEventCreator"
-            android:exported="false" />
-        <activity
-            android:name=".ViewReportActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Forgot_Password"
-            android:exported="false" />
-        <activity
-            android:name=".EditProfile"
-            android:exported="false" />
-        <activity
-            android:name=".Chat"
-            android:exported="false" />
-        <activity
-            android:name=".ChatList"
-            android:exported="false" />
-        <activity
-            android:name=".CreateEventActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateReport"
-            android:exported="false" />
-        <activity
-            android:name=".EditEventActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".GenerateQRCode"
-            android:exported="false" />
-
-        <activity
-            android:name=".MyQRCode"
-            android:exported="false" />
-        <activity
-            android:name=".MyProfile"
-            android:exported="false" />
-        <activity
-            android:name=".my_events_event"
+            android:name=".Search"
             android:exported="false" />
         <activity
             android:name=".Venue"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".SearchTab"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -96,11 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CaptureAct"
-            android:screenOrientation="fullSensor"
-            android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

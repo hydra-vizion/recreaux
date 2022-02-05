@@ -28,11 +28,12 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.recreaux.EventRecords;
+import com.example.recreaux.EventMapsActivity;
 import com.example.recreaux.R;
 import com.example.recreaux.ViewEventCreator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -62,7 +63,7 @@ public class CreateEventActivity extends AppCompatActivity {
     Button btn_CreateEvent;
     Bitmap imageicon,mappreview;
     double placelongitude,placelatitude;
-    public static int currentuserid;
+    String currentuserid;
     public static int highestid;
     boolean iconselected,locationselected;
 
@@ -75,8 +76,8 @@ public class CreateEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
         ref = FirebaseDatabase.getInstance().getReference();
-
-        currentuserid=2;////////////////////////////////////////////////Change here later//////////////////////////////////////////////////////
+        currentuserid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //currentuserid="OmnyApXKCAOdnll4Dc1RKoLLSKH3";////////////////////////////////////////////////Change here later//////////////////////////////////////////////////////
         iconselected=false;
         locationselected=false;
         IV_CreateMapPreview = findViewById(R.id.IV_CreateMapPreview);
@@ -103,7 +104,6 @@ public class CreateEventActivity extends AppCompatActivity {
                         if(Integer.valueOf(nodId)>=highestid){
                             CreateEventActivity.highestid=Integer.valueOf(nodId);
                         }
-                        //System.out.println(snap.child("Event Name").getValue());
                     }
                 }
                 else{
@@ -119,22 +119,22 @@ public class CreateEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 et_CreateEventLocation.setError(null);
-                /*Intent intent = new Intent(CreateEventActivity.this,EventMapsActivity.class);
+                Intent intent = new Intent(CreateEventActivity.this, EventMapsActivity.class);
                 intent.putExtra("parent","create");
                 intent.putExtra("height",IV_CreateMapPreview.getHeight());
                 intent.putExtra("width",IV_CreateMapPreview.getWidth());
-                startActivityForResult(intent,0);*/
+                startActivityForResult(intent,0);
             }
         });
         et_CreateEventLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 et_CreateEventLocation.setError(null);
-                /*Intent intent = new Intent(CreateEventActivity.this,EventMapsActivity.class);
+                Intent intent = new Intent(CreateEventActivity.this,EventMapsActivity.class);
                 intent.putExtra("parent","create");
                 intent.putExtra("height",IV_CreateMapPreview.getHeight());
                 intent.putExtra("width",IV_CreateMapPreview.getWidth());
-                startActivityForResult(intent,0);*/
+                startActivityForResult(intent,0);
             }
         });
 
@@ -234,9 +234,6 @@ public class CreateEventActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-            byte[] test = getBytes(imageicon);
-            Bitmap test2= getImage(test);
             Bitmap imageforicon = scaleCenterCrop(imageicon,iv_CreateEventIcon.getHeight(),iv_CreateEventIcon.getWidth());
             iv_CreateEventIcon.setImageBitmap(imageforicon);
             iconselected=true;
@@ -250,6 +247,7 @@ public class CreateEventActivity extends AppCompatActivity {
             mappreview=scaleCenterCrop(mappreview,IV_CreateMapPreview.getHeight(),IV_CreateMapPreview.getWidth());
             IV_CreateMapPreview.setImageBitmap(mappreview);
             locationselected=true;
+
         }
     }
 
@@ -374,66 +372,21 @@ public class CreateEventActivity extends AppCompatActivity {
         ref.child("Event").child(String.valueOf(highestid)).child("Event Location").setValue(location);
         ref.child("Event").child(String.valueOf(highestid)).child("Event Latitude").setValue(placelatitude);
         ref.child("Event").child(String.valueOf(highestid)).child("Event Longitude").setValue(placelongitude);
-        //String s = Base64.getEncoder().encodeToString(eventicon);
-        //ref.child("Event").child(String.valueOf(highestid)).child("Event Icon").setValue(s);
-        ref.child("Event").child(String.valueOf(highestid)).child("Event ID").setValue(String.valueOf(highestid));
-        ref.child("Event").child(String.valueOf(highestid)).child("Event Creator").setValue("user_"+String.valueOf(currentuserid));
-        ref.child("Event").child(String.valueOf(highestid)).child("Event Participants").child("user_"+String.valueOf(currentuserid)).setValue(currentuserid);
-        //String s2 = Base64.getEncoder().encodeToString(getBytes(mappreview));
-        //ref.child("Event").child(String.valueOf(highestid)).child("Event MapPreview").setValue(s2);
+        String s = Base64.getEncoder().encodeToString(eventicon);
+        ref.child("Event").child(String.valueOf(highestid)).child("Event Icon").setValue(s);
+        ref.child("Event").child(String.valueOf(highestid)).child("Event ID").setValue(highestid);
+        ref.child("Event").child(String.valueOf(highestid)).child("Event Creator").setValue("user_"+currentuserid);
+        ref.child("Event").child(String.valueOf(highestid)).child("Event Participants").child("user_"+currentuserid).setValue(currentuserid);
+        String s2 = Base64.getEncoder().encodeToString(getBytes(mappreview));
+
+        ref.child("Event").child(String.valueOf(highestid)).child("Event MapPreview").setValue(s2);
         ref.child("Event").child(String.valueOf(highestid)).child("Event Status").setValue(true);
         Toast.makeText(getApplicationContext(), "Event Created", Toast.LENGTH_SHORT).show();
 
-        EventRecords eventRecords = new EventRecords();
-        eventRecords.setEventName(name);
-        eventRecords.setEventDate(date);
-        eventRecords.setEventTime(time);
-        eventRecords.setEventDescription(description);
-        eventRecords.setEventTags(tags);
-        eventRecords.setEventLocation(location);
-        eventRecords.setEventLocationLatitude(String.valueOf(placelatitude));
-        eventRecords.setEventLocationLongitude(String.valueOf(placelongitude));
-        //eventRecords.setIconID(eventicon);
-        ArrayList<String> participant = new ArrayList<String>();
-        participant.add(String.valueOf(currentuserid));
-        eventRecords.setEventParticipants(participant);
-        //eventRecords.setEventstatus(true);
-        eventRecords.setEventID(highestid);
-        eventRecords.setEventCreatorID(currentuserid);
-
-
         Intent intent = new Intent(CreateEventActivity.this, ViewEventCreator.class);
-        intent.putExtra("eventrecord",eventRecords);
+        intent.putExtra("eventid",highestid);
         this.finish();
         startActivity(intent);
-
-        //iv_CreateEventIcon.setImageBitmap(getImage(Base64.getDecoder().decode(s)));
-
-        /*
-        ref.child("Event").child("1").child("Event Icon").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    //System.out.println(String.valueOf(task.getResult().getValue()));
-                    iv_CreateEventIcon.setImageBitmap(getImage(Base64.getDecoder().decode(String.valueOf(task.getResult().getValue()))));
-                }
-            }
-        });
-        ref.child("Event").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    //System.out.println(String.valueOf(task.getResult().getValue()));
-                }
-            }
-        });*/
-
 
     }
 }
