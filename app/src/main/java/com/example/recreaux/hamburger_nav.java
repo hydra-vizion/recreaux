@@ -27,8 +27,7 @@ public class hamburger_nav extends AppCompatActivity {
 
     }
 
-    public void ClickMenu(View view){
-        openDrawer(drawerLayout);
+    public void ClickMenu(View view){ openDrawer(drawerLayout);
     }
 
     public static void openDrawer(DrawerLayout drawerLayout) {
@@ -36,8 +35,7 @@ public class hamburger_nav extends AppCompatActivity {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-    public void ClickLogo(View view){
-        closeDrawer(drawerLayout);
+    public void ClickLogo(View view){ closeDrawer(drawerLayout);
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
@@ -47,9 +45,9 @@ public class hamburger_nav extends AppCompatActivity {
 
     }
 
-    public void ClickHome(View view){
-        recreate();
+    public void ClickHome(View view){ recreate();
     }
+
     public void ClickDashboard(View view){
         redirectActivity(this,Dashboard.class);
     }

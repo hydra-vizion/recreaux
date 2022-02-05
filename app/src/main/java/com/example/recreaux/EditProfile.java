@@ -65,6 +65,8 @@ public class EditProfile extends AppCompatActivity {
                     email=dataSnapshot.child("email").getValue().toString();
                 }
                 else{
+                    Bitmap icon= getImage(Base64.getDecoder().decode(dataSnapshot.child("UserImage").getValue().toString()));
+                    btnProfPic.setImageBitmap(icon);
                     userNickname.setText(dataSnapshot.child("Username").getValue().toString());
                     userResidence.setText(dataSnapshot.child("Residence").getValue().toString());
                     userInterests.setText(dataSnapshot.child("Interests").getValue().toString());
@@ -93,7 +95,8 @@ public class EditProfile extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                 String s = Base64.getEncoder().encodeToString(getBytes(imageicon));
+
+                 String s = Base64.getEncoder().encodeToString(getBytes(scaleCenterCrop(imageicon,btnProfPic.getHeight(),btnProfPic.getWidth())));
 
                  User user = new User(userFullName.getText().toString().trim(),
                          userNickname.getText().toString().trim(),

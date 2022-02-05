@@ -85,6 +85,15 @@
         <activity
             android:name=".MyEventsActivity"
             android:exported="false" />
+        <activity
+            android:name=".About_us"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".hamburger_nav"
+            android:exported="false" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />

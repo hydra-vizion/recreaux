@@ -63,6 +63,8 @@ public class FriendList extends AppCompatActivity {
                                         imageView.setImageBitmap(getImage(Base64.getDecoder().decode(snapshot.child("UserImage").getValue().toString())));
                                         TextView textName = view.findViewById(R.id.TV_Friend_Name);
                                         textName.setText(snapshot.child("Username").getValue().toString());
+
+
                                         friends.addView(view);
                                     }
                                 }

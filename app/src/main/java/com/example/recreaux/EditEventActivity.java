@@ -59,7 +59,7 @@ public class EditEventActivity extends AppCompatActivity {
     int eventid;
     String currentuserid;
 
-    com.example.groupproject.EventRecords sentEvent;
+    com.example.recreaux.EventRecords sentEvent;
     private DatabaseReference ref;
     private static final int RESULT_LOAD_IMAGE=1;
     @Override
@@ -84,7 +84,7 @@ public class EditEventActivity extends AppCompatActivity {
         IV_EditMapPreview = findViewById(R.id.IV_EditMapPreview);
 
         if(getIntent().getExtras() != null) {
-            sentEvent = new com.example.groupproject.EventRecords();
+            sentEvent = new com.example.recreaux.EventRecords();
             eventid=getIntent().getExtras().getInt("eventid");
             ref.child("Event").child(String.valueOf(eventid)).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override

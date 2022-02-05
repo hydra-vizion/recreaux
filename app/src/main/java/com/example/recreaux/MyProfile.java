@@ -98,7 +98,7 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         SearchButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(MyProfile.this,FriendList.class);
+                Intent intent = new Intent(MyProfile.this,MyEventsActivity.class);
                 //intent.putExtra("id","Ub7oIFwv88h6INPAWO04s4F9asi2");
                 startActivity(intent);
             }
