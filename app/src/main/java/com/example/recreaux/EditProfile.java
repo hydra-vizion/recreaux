@@ -1,5 +1,7 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
@@ -53,6 +56,9 @@ public class EditProfile extends AppCompatActivity {
         btnConfirm=(Button)findViewById(R.id.Btn_EditProfile_Confirm);
         btnProfPic=(ImageView)findViewById(R.id.V_EditProfile_ProfPic);
         userProfile=new User();
+
+        imageicon = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+        imageicon.eraseColor(Color.BLACK);
 
         reff =FirebaseDatabase.getInstance().getReference("Users")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -177,4 +183,5 @@ public class EditProfile extends AppCompatActivity {
 
         return dest;
     }
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
 }

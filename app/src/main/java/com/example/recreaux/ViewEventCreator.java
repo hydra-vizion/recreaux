@@ -1,5 +1,7 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -210,4 +212,5 @@ public class ViewEventCreator extends AppCompatActivity {
     public static Bitmap getImage(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
 }

@@ -20,8 +20,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Base64;
 import java.util.Iterator;
 
-public class Notification extends AppCompatActivity {
+public class Notifications extends AppCompatActivity {
     DatabaseReference refNotification,refUser;
     LinearLayout notifications;
     String image,name,UserId,FriendId;
@@ -75,7 +73,7 @@ public class Notification extends AppCompatActivity {
                                 view.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Intent intent = new Intent(Notification.this,OtherProfile.class);
+                                        Intent intent = new Intent(Notifications.this,OtherProfile.class);
                                         intent.putExtra("id",singleNotification.child("UserID").getValue().toString());
                                         startActivity(intent);
                                     }
@@ -85,7 +83,7 @@ public class Notification extends AppCompatActivity {
                             view.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    Intent intent = new Intent(Notification.this,ViewEvent.class);
+                                    Intent intent = new Intent(Notifications.this,ViewEvent.class);
                                     intent.putExtra("eventid",Integer.valueOf(singleNotification.child("Event ID").getValue().toString()));
                                     startActivity(intent);
                                 }
@@ -106,7 +104,7 @@ public class Notification extends AppCompatActivity {
                 }
             }@Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(Notification.this,"Some error occured ", Toast.LENGTH_LONG).show();
+                Toast.makeText(Notifications.this,"Some error occured ", Toast.LENGTH_LONG).show();
             }
         });
     }

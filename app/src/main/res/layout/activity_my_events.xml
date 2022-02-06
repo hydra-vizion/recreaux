@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TV_MyEventsHistory" />
 
     <ImageView
-        android:id="@+id/btn_OtherProfile_Nav5"
+        android:id="@+id/Btn_MyEvents_Nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -75,8 +75,8 @@
         android:onClick="ClickMenu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_hamburger"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ListView
         android:id="@+id/LV_MyEvents"

@@ -30,16 +30,16 @@
         app:layout_constraintTop_toTopOf="@+id/v_OtherProfile_Head" />
 
     <ImageView
-        android:id="@+id/btn_OtherProfile_Nav3"
+        android:id="@+id/Btn_ScanQRCode_Nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:onClick="ClickMenu"
-        app:layout_constraintStart_toStartOf="@+id/v_OtherProfile_Head"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_hamburger"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/btn_QRScanner_Scan"

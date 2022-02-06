@@ -49,16 +49,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/V_CreateEvent_Header" />
 
             <ImageView
-                android:id="@+id/btn_OtherProfile_Nav6"
+                android:id="@+id/Btn_CreateEvent_Nav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:onClick="ClickMenu"
-                app:layout_constraintStart_toStartOf="@+id/V_CreateEvent_Header"
-                app:layout_constraintTop_toTopOf="@+id/V_CreateEvent_Header"
-                app:srcCompat="@drawable/ic_hamburger"
-                tools:ignore="SpeakableTextPresentCheck" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_home"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/TV_CreateEventName"

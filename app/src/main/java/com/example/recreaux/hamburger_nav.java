@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -22,8 +24,6 @@ public class hamburger_nav extends AppCompatActivity {
         //
         drawerLayout = findViewById(R.id.drawer_layout);
 
-
-
     }
 
     public void ClickMenu(View view){
@@ -39,6 +39,11 @@ public class hamburger_nav extends AppCompatActivity {
         closeDrawer(drawerLayout);
     }
 
+    public void ClickSearch(View view){
+        Intent intent = new Intent(hamburger_nav.this,SearchTab.class);
+        startActivity(intent);
+    }
+
     public static void closeDrawer(DrawerLayout drawerLayout) {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -51,7 +56,7 @@ public class hamburger_nav extends AppCompatActivity {
     }
     public void ClickCreateEvent(View view){redirectActivity(this,CreateEventActivity.class);}
     public void ClickMyEvents(View view){redirectActivity(this,MyEventsActivity.class);}
-    public void ClickNotifications(View view){redirectActivity(this,Notification.class);}
+    public void ClickNotifications(View view){redirectActivity(this, Notifications.class);}
     public void ClickFriendsList(View view){redirectActivity(this,FriendList.class);}
     public void ClickGenerateQR(View view){redirectActivity(this,MyQRCode.class);}
     public void ClickScanQR(View view){redirectActivity(this,ScanQRCode.class);}

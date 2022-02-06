@@ -1,11 +1,17 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -26,8 +32,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
@@ -41,7 +49,7 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
     //widgets
     private EditText mSearchParam;
     private ListView mListView;
-
+    private String userimage;
     //vars
     //private List<String> mUserList;
 
@@ -215,22 +223,43 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
             }
             else if(currentTabPos == 1){
                 referenceUser.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
                             if(singleSnapshot.child("Name").getValue().toString().toLowerCase().contains(keyword)){
+
+                                if(!singleSnapshot.child("UserImage").exists()){
+                                    Bitmap image = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+                                    image.eraseColor(Color.BLACK);
+                                    userimage=Base64.getEncoder().encodeToString(getBytes(image));
+                                }
+                                else{
+                                    userimage=singleSnapshot.child("UserImage").getValue().toString();
+                                }
+
                                 mContentList.add(new SearchContent(
                                         singleSnapshot.child("Name").getValue().toString(),
                                         singleSnapshot.child("Username").getValue().toString(),
-                                        singleSnapshot.child("UserImage").getValue().toString(),
+                                        userimage,
                                         "user",
                                         singleSnapshot.getKey()));
                             }
                             else if(singleSnapshot.child("Username").getValue().toString().toLowerCase().contains(keyword)){
+
+                                if(!singleSnapshot.child("UserImage").exists()){
+                                    Bitmap image = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+                                    image.eraseColor(Color.BLACK);
+                                    userimage=Base64.getEncoder().encodeToString(getBytes(image));
+                                }
+                                else{
+                                    userimage=singleSnapshot.child("UserImage").getValue().toString();
+                                }
+
                                 mContentList.add(new SearchContent(
                                         singleSnapshot.child("Name").getValue().toString(),
                                         singleSnapshot.child("Username").getValue().toString(),
-                                        singleSnapshot.child("UserImage").getValue().toString(),
+                                        userimage,
                                         "user",
                                         singleSnapshot.getKey()));
                             }
@@ -362,4 +391,10 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
         }
     }
+    public static byte[] getBytes(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        return stream.toByteArray();
+    }
+
 }

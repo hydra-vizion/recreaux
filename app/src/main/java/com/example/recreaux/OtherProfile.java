@@ -1,5 +1,7 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,7 +61,7 @@ public class OtherProfile extends AppCompatActivity {
         final TextView ResidenceTextView= (TextView) findViewById(R.id.TV_OtherProfile_Residence);
         final TextView InterestsTextView= (TextView) findViewById(R.id.TV_OtherProfile_Interests);
         ImageView ProfileImageView= (ImageView) findViewById(R.id.IV_OtherProfile_ProfilePic);
-        ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_OtherProfile_Search);
+        ImageView SearchButton=(ImageView)findViewById(R.id.Btn_OtherProfile_Search);
 
 
 
@@ -171,4 +173,5 @@ public class OtherProfile extends AppCompatActivity {
     public static Bitmap getImage(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
 }

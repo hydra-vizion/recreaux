@@ -37,8 +37,6 @@ public class MyArrayAdapter extends ArrayAdapter<String> {
 
             }
         });
-
-
         return rowView;
     }
 }

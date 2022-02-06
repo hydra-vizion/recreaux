@@ -76,7 +76,7 @@
                 android:layout_marginTop="88dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/mprofile" />
+                app:srcCompat="@drawable/black" />
 
             <Button
                 android:id="@+id/Btn_OtherProfile_Add"
@@ -193,16 +193,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ImageView
+        android:id="@+id/Btn_OtherProfile_Nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:onClick="ClickMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
         android:id="@+id/Btn_OtherProfile_Search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="20dp"
+        android:tint="#838383"
         app:layout_constraintBottom_toBottomOf="@+id/V_OtherProfile_Head"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/V_OtherProfile_Head"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@android:drawable/ic_menu_search"
+        app:srcCompat="@drawable/ic_search"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

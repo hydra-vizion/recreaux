@@ -20,7 +20,7 @@
             android:layout_height="wrap_content">
 
             <View
-                android:id="@+id/V_EventReport_Header"
+                android:id="@+id/V_CreateReport_Header"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="#67DE73"
@@ -37,7 +37,7 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
-                app:layout_constraintStart_toStartOf="@+id/V_EventReport_Header"
+                app:layout_constraintStart_toStartOf="@+id/V_CreateReport_Header"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/V_EventReport_Header" />
+                app:layout_constraintTop_toBottomOf="@+id/V_CreateReport_Header" />
 
             <TextView
                 android:id="@+id/TV_CreateReportEventName"
@@ -231,6 +231,18 @@
                 app:layout_constraintStart_toEndOf="@+id/btn_CreateReportAddImage"
                 app:layout_constraintTop_toBottomOf="@+id/ET_CreateReportPostEventReport"
                 tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/Btn_CreateReport_Nav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:onClick="ClickMenu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_home"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <HorizontalScrollView
                 android:id="@+id/SV_CreateReportGallery"

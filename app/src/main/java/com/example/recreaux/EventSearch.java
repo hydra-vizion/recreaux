@@ -1,5 +1,7 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -61,4 +63,5 @@ public class EventSearch extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_event_search, container, false);
     }
+
 }

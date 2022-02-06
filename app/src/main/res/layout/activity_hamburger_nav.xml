@@ -19,7 +19,7 @@
         <include layout="@layout/main_toolbar" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/IV_Recroux"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/logo" />

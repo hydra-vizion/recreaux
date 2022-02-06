@@ -4,6 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_main.xml" value="0.24094202898550723" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_dashboard.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_emo.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_hamburger.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_home.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_info.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_launcher_background.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_more.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_qr.xml" value="0.208" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_search.xml" value="0.3155" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_searchblack.xml" value="0.245" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/ic_searchwhite.xml" value="0.245" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/drawable/profilepicture.xml" value="0.3398148148148148" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_about_us.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_chat.xml" value="0.38697916666666665" />
@@ -13,7 +25,7 @@
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_dashboard.xml" value="0.2609375" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_edit_event.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_edit_profile.xml" value="0.33" />
-        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_event_maps.xml" value="0.1" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_event_maps.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_forgot_password.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_friend_list.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_friend_profile.xml" value="0.38697916666666665" />
@@ -29,7 +41,7 @@
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_nav_to_nav.xml" value="0.25625" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_notification.xml" value="0.3233695652173913" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_other_profile.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_post_event_view.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_post_event_view.xml" value="0.33" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_scan_qrcode.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_search.xml" value="0.25625" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/activity_search_tab.xml" value="0.25625" />
@@ -57,7 +69,8 @@
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/notification.xml" value="0.3233695652173913" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/request.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/search_item_place.xml" value="0.3278985507246377" />
-        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/user_record_view_event.xml" value="0.1" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/user_record_view_event.xml" value="0.33" />
+        <entry key="..\:/Users/User/Desktop/AI UM/Sem7/Mobile Application Development/GitHub/recreaux/app/src/main/res/layout/venuedetailsverticals.xml" value="0.33605072463768115" />
         <entry key="..\:/Users/User/Desktop/Semester_7 2021/Mobile application/Mobile_application_assignment/recreaux/app/src/main/res/layout/activity_edit_event.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/Desktop/Semester_7 2021/Mobile application/Mobile_application_assignment/recreaux/app/src/main/res/layout/activity_edit_profile.xml" value="0.3242753623188406" />
         <entry key="..\:/Users/User/Desktop/Semester_7 2021/Mobile application/Mobile_application_assignment/recreaux/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />

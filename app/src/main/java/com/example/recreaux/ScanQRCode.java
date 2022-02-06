@@ -97,21 +97,6 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-
-    public void ClickLogo(View view){
-        hamburger_nav.closeDrawer(drawerLayout);
-    }
-    public void ClickHome(View view){ hamburger_nav.redirectActivity(this,MyProfile.class); }
-    public void ClickDashboard(View view){ hamburger_nav.redirectActivity(this,Dashboard.class); }
-    public void ClickScanQR(View view){recreate();}
-    public void ClickAboutUs(View view){
-        hamburger_nav.redirectActivity(this,About_us.class);
-    }
-    public void ClickLogout(View view){
-        hamburger_nav.logout(this);
-    }
-
-
     @Override
     protected void onPause(){
         super.onPause();

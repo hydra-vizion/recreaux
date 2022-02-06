@@ -17,10 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".Notification"
-            android:exported="false" />
-        <activity
-            android:name=".Nav_to_Nav"
+            android:name=".Notifications"
             android:exported="false" />
         <activity
             android:name=".CaptureAct"
@@ -33,12 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".hamburger_nav"
-            android:exported="false" />
-        <activity
-            android:name=".FriendProfile"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ScanQRCode"
@@ -74,19 +65,10 @@
             android:name=".EditEventActivity"
             android:exported="false" />
         <activity
-            android:name=".GenerateQRCode"
-            android:exported="false" />
-        <activity
             android:name=".MyQRCode"
             android:exported="false" />
         <activity
             android:name=".MyProfile"
-            android:exported="false" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="false" />
-        <activity
-            android:name=".About_us"
             android:exported="false" />
         <activity
             android:name=".ViewEventParticipantsActivity"

@@ -18,16 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/btn_OtherProfile_Nav2"
+        android:id="@+id/Btn_MyQRCode_Nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:onClick="ClickMenu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_hamburger"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/TV_MyQRCode_HeadText"
@@ -43,9 +43,9 @@
 
     <ImageView
         android:id="@+id/IV_QRCode"
-        android:layout_width="280dp"
+        android:layout_width="240dp"
         android:layout_height="240dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/v_MyQRCode_Head"
@@ -53,11 +53,10 @@
 
     <ImageView
         android:id="@+id/IV_ProfilePicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IV_QRCode"
         tools:srcCompat="@tools:sample/avatars" />
@@ -66,7 +65,7 @@
         android:id="@+id/TV_UserNickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
         android:textColor="#151313"
         app:layout_constraintEnd_toEndOf="parent"
