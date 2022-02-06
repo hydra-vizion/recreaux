@@ -100,7 +100,7 @@ public class EventUserListAdapter extends ArrayAdapter<String> {
                         }
                     }
                 });
-                Toast.makeText(getContext(),"Shared to "+index, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),"Shared to "+index, Toast.LENGTH_SHORT).show();
             }
         });
         if(buttonshow){

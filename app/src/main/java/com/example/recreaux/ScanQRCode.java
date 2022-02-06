@@ -1,5 +1,7 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,7 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qrcode);
+
 
         btn_QRScanner_Scan = findViewById(R.id.btn_QRScanner_Scan);
         btn_QRScanner_Scan.setOnClickListener(this);
@@ -93,10 +96,7 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
             super.onActivityResult(requestCode,resultCode,data);
         }
     }
-    public void ClickMenu(View view){
-        //Open drawer
-        hamburger_nav.openDrawer(drawerLayout);
-    }
+
 
     public void ClickLogo(View view){
         hamburger_nav.closeDrawer(drawerLayout);
@@ -118,4 +118,7 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
         //Close drawer
         //hamburger_nav.closeDrawer(drawerLayout);
     }
+
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
+
 }

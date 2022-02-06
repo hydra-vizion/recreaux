@@ -17,6 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/btn_OtherProfile_Nav2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:onClick="ClickMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_hamburger"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
         android:id="@+id/TV_MyQRCode_HeadText"
         android:layout_width="wrap_content"
@@ -31,8 +43,8 @@
 
     <ImageView
         android:id="@+id/IV_QRCode"
-        android:layout_width="175dp"
-        android:layout_height="165dp"
+        android:layout_width="280dp"
+        android:layout_height="240dp"
         android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,8 +55,9 @@
         android:id="@+id/IV_ProfilePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IV_QRCode"
         tools:srcCompat="@tools:sample/avatars" />

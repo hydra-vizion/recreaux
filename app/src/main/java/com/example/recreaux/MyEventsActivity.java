@@ -1,5 +1,7 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -204,4 +206,7 @@ public class MyEventsActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
+
 }

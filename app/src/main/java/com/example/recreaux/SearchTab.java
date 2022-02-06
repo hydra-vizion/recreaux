@@ -329,7 +329,7 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
 
-        //Toast.makeText(SearchTab.this,mContentList.get(position).id+"",Toast.LENGTH_LONG).show();
+        //Toast.makeText(SearchTab.this,mContentList.get(position).id+""+mContentList.get(position).type,Toast.LENGTH_LONG).show();
         String ActivityType = mContentList.get(position).type;
 
         if(ActivityType.equals("venue")){
@@ -338,14 +338,15 @@ public class SearchTab extends AppCompatActivity implements AdapterView.OnItemCl
             startActivity(intent);
         }
         else if(ActivityType.equals("user")){
-//            Intent intent = new Intent(SearchTab.this,Venue.class);
-//            intent.putExtra("venueid",mContentList.get(position).id);
-//            startActivity(intent);
+            Intent intent = new Intent(SearchTab.this,OtherProfile.class);
+            intent.putExtra("id",mContentList.get(position).id);
+            startActivity(intent);
         }
         else if(ActivityType.equals("event")){
-//            Intent intent = new Intent(SearchTab.this,Venue.class);
-//            intent.putExtra("eventid",mContentList.get(position).id);
-//            startActivity(intent);
+            Intent intent = new Intent(SearchTab.this,ViewEvent.class);
+            int eventID = Integer.parseInt(mContentList.get(position).id);
+            intent.putExtra("eventid",eventID);
+            startActivity(intent);
         }
 
 

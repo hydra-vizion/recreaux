@@ -1,11 +1,14 @@
 package com.example.recreaux;
+import static com.example.recreaux.hamburger_nav.redirectActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +30,7 @@ import java.util.Base64;
 public class MyQRCode extends AppCompatActivity {
 
     TextView TV_UserNickname, TV_UserFullname;
-    ImageView IV_QRCode;
+    ImageView IV_QRCode, IV_ProfilePicture;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -44,6 +47,7 @@ public class MyQRCode extends AppCompatActivity {
         TV_UserNickname = findViewById(R.id.TV_UserNickname);
         TV_UserFullname = findViewById(R.id.TV_UserFullname);
         IV_QRCode = findViewById(R.id.IV_QRCode);
+        IV_ProfilePicture = findViewById(R.id.IV_ProfilePicture);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -62,9 +66,24 @@ public class MyQRCode extends AppCompatActivity {
                 String nickname = userProfile.Username;
                 TV_UserNickname.setText(nickname);
 
+                String userimage = userProfile.UserImage;
+
+                if(userimage == null){
+                    Bitmap image = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+                    image.eraseColor(Color.BLACK);
+
+                    IV_ProfilePicture.setImageBitmap(image);
+
+                }
+
+                else{
+                    Bitmap image = getImage(Base64.getDecoder().decode(userimage));
+                    IV_ProfilePicture.setImageBitmap(image);
+                }
+
                 MultiFormatWriter writer = new MultiFormatWriter();
                 try {
-                    BitMatrix matrix = writer.encode(userID, BarcodeFormat.QR_CODE, 350, 350);
+                    BitMatrix matrix = writer.encode(userID, BarcodeFormat.QR_CODE, 800, 800);
                     BarcodeEncoder encoder = new BarcodeEncoder();
                     Bitmap bitmap = encoder.createBitmap(matrix);
                     IV_QRCode.setImageBitmap(bitmap);
@@ -96,5 +115,8 @@ public class MyQRCode extends AppCompatActivity {
     public static Bitmap getImage(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
+
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
+
 
 }
