@@ -24,6 +24,7 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qrcode);
 
+
         btn_QRScanner_Scan = findViewById(R.id.btn_QRScanner_Scan);
         btn_QRScanner_Scan.setOnClickListener(this);
 

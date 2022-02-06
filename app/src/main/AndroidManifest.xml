@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.recreaux">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +21,10 @@
             android:name=".Venue"
             android:exported="false" />
         <activity
-            android:name=".SearchTab"
+            android:name=".CaptureAct"
+            android:exported="false" />
+        <activity
+            android:name=".ScanQRCode"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
