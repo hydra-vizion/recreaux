@@ -66,15 +66,15 @@ public class ViewEventParticipantsActivity extends AppCompatActivity {
                 String item = (String) parent.getAdapter().getItem(position);
                 //Toast.makeText(getApplicationContext(),"Position "+item, Toast.LENGTH_SHORT).show();
                 if(item.equals(currentuserid)){
-                    //Intent intent = new Intent(ViewEventParticipantsActivity.this,MyProfile.class);
-                    //intent.putExtra("id",item);
-                    //startActivity(intent);
+                    Intent intent = new Intent(ViewEventParticipantsActivity.this,MyProfile.class);
+                    intent.putExtra("id",item);
+                    startActivity(intent);
                     Toast.makeText(getApplicationContext(),"My Profile "+item, Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getApplicationContext(),"Other Profile "+item, Toast.LENGTH_SHORT).show();
-                    //Intent intent = new Intent(ViewEventParticipantsActivity.this,OtherProfile.class);
-                    //intent.putExtra("id",item);
-                    //startActivity(intent);
+                    Intent intent = new Intent(ViewEventParticipantsActivity.this,OtherProfile.class);
+                    intent.putExtra("id",item);
+                    startActivity(intent);
                 }
             }
         });

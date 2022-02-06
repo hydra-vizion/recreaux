@@ -94,6 +94,7 @@ public class Notification extends AppCompatActivity {
                             ImageView imageView = view.findViewById(R.id.IM_Notification_ProfilePic);
                             String UserImage = singleNotification.child("UserImage").getValue().toString();
                             imageView.setImageBitmap(getImage(Base64.getDecoder().decode(UserImage)));
+
                             TextView textMessage = view.findViewById(R.id.TV_Notification_Name);
                             textMessage.setText(singleNotification.child("Message").getValue().toString());
                             notifications.addView(view,0);

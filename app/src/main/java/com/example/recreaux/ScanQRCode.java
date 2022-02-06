@@ -116,6 +116,6 @@ public class ScanQRCode extends AppCompatActivity implements View.OnClickListene
     protected void onPause(){
         super.onPause();
         //Close drawer
-        hamburger_nav.closeDrawer(drawerLayout);
+        //hamburger_nav.closeDrawer(drawerLayout);
     }
 }

@@ -229,7 +229,8 @@
                 android:paddingRight="2dp"
                 android:text="Delete Images"
                 app:layout_constraintStart_toEndOf="@+id/btn_CreateReportAddImage"
-                app:layout_constraintTop_toBottomOf="@+id/ET_CreateReportPostEventReport" />
+                app:layout_constraintTop_toBottomOf="@+id/ET_CreateReportPostEventReport"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <HorizontalScrollView
                 android:id="@+id/SV_CreateReportGallery"

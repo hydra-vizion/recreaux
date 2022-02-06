@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Base64;
 import java.util.Iterator;
 
@@ -45,10 +47,10 @@ public class FriendList extends AppCompatActivity {
 
         UserId=FirebaseAuth.getInstance().getCurrentUser().getUid();
         refUser= FirebaseDatabase.getInstance().getReference("Users");
-        refFriend= FirebaseDatabase.getInstance().getReference("Friends").child(UserId);
+        refFriend= FirebaseDatabase.getInstance().getReference("Friends");
 
 
-        refFriend.addListenerForSingleValueEvent(new ValueEventListener() {
+        refFriend.child(UserId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Iterator<DataSnapshot> iter = dataSnapshot.getChildren().iterator();
@@ -65,10 +67,32 @@ public class FriendList extends AppCompatActivity {
                                         DataSnapshot snapshot=task.getResult();
 
                                         View view = inflater.inflate(R.layout.friend, friends, false);
+
                                         ImageView imageView = view.findViewById(R.id.IM_Friend_ProfilePic);
+                                        if(!snapshot.child("UserImage").exists()){
+                                            Bitmap image = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+                                            image.eraseColor(Color.BLACK);
+                                            imageView.setImageBitmap(image);
+                                        }
+                                        else{
                                         imageView.setImageBitmap(getImage(Base64.getDecoder().decode(snapshot.child("UserImage").getValue().toString())));
+                                        }
+
+
                                         TextView textName = view.findViewById(R.id.TV_Friend_Name);
                                         textName.setText(snapshot.child("Username").getValue().toString());
+                                        Button delete=view.findViewById(R.id.Btn_Friend_Remove);
+
+                                        delete.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                refFriend.child(snapshot.getKey().toString()).child(UserId).removeValue();
+                                                refFriend.child(UserId).child(snapshot.getKey().toString()).removeValue();
+                                                delete.setClickable(false);
+                                                delete.setBackgroundColor(0xFFF8F8F8);
+                                            }
+                                        });
+
                                         view.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
@@ -91,6 +115,11 @@ public class FriendList extends AppCompatActivity {
     });
 
 }
+    public static byte[] getBytes(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        return stream.toByteArray();
+    }
     public static Bitmap getImage(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
