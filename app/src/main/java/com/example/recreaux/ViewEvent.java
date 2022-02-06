@@ -204,7 +204,7 @@ public class ViewEvent extends AppCompatActivity {
         btnViewShareEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Event Shared", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Event Shared", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ViewEvent.this,ViewEventParticipantsActivity.class);
                 intent.putExtra("eventid",eventid);
                 intent.putExtra("shareable",true);

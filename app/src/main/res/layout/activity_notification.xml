@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:onClick="Click"
     tools:context=".FriendList">
 
     <LinearLayout
@@ -20,7 +21,9 @@
             android:id="@+id/LV_Notifications_List"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/notification" />
+            tools:listitem="@layout/notification">
+
+        </ListView>
     </LinearLayout>
 
     <View
@@ -44,5 +47,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_OtherProfile_Nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMenu"
+        app:layout_constraintBottom_toBottomOf="@+id/TV_Notifications_HeadText"
+        app:layout_constraintEnd_toStartOf="@+id/TV_Notifications_HeadText"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="@+id/V_Notifications_Head"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_hamburger"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

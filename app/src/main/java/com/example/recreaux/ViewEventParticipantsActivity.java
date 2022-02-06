@@ -69,9 +69,9 @@ public class ViewEventParticipantsActivity extends AppCompatActivity {
                     //Intent intent = new Intent(ViewEventParticipantsActivity.this,MyProfile.class);
                     //intent.putExtra("id",item);
                     //startActivity(intent);
-                    Toast.makeText(getApplicationContext(),"My Profile "+item, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"My Profile "+item, Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(getApplicationContext(),"Other Profile "+item, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"Other Profile "+item, Toast.LENGTH_SHORT).show();
                     //Intent intent = new Intent(ViewEventParticipantsActivity.this,OtherProfile.class);
                     //intent.putExtra("id",item);
                     //startActivity(intent);
