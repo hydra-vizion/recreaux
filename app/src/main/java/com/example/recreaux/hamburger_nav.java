@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class hamburger_nav extends AppCompatActivity {
     //
     DrawerLayout drawerLayout;
@@ -65,7 +67,7 @@ public class hamburger_nav extends AppCompatActivity {
         logout(this);
     }
 
-    public static void logout(Activity activity) {
+    public void logout(Activity activity) {
         //Alert dialogue
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         //Set the title
@@ -77,8 +79,10 @@ public class hamburger_nav extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //Finish activity
-                activity.finishAffinity();
-                System.exit(0);
+                //activity.finishAffinity();
+                //System.exit(0);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(hamburger_nav.this,Login.class));
             }
         });
 

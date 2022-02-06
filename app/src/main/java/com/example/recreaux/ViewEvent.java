@@ -105,7 +105,17 @@ public class ViewEvent extends AppCompatActivity {
                                 finish();
                                 startActivity(intent);
                             }
+
+
                         }
+
+                        if(currentuserid.equals(snapshot.child("Event Creator").getValue().toString().split("_")[1])){
+                            Intent intent = new Intent(ViewEvent.this,ViewEventCreator.class);
+                            intent.putExtra("eventid",eventid);
+                            finish();
+                            startActivity(intent);
+                        }
+
                         sentEvent.setEventID(Integer.valueOf(snapshot.child("Event ID").getValue().toString()));
                         sentEvent.setEventName(snapshot.child("Event Name").getValue().toString());
                         sentEvent.setEventDate(snapshot.child("Event Date").getValue().toString());
