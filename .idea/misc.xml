@@ -3,29 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/drawable/clickable.xml" value="0.271875" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/drawable/roundedsearch.xml" value="0.3828125" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_edit_event.xml" value="0.13333333333333333" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_main.xml" value="0.24094202898550723" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_my_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_post_event_view.xml" value="0.35260416666666666" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_search.xml" value="0.35260416666666666" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_search_tab.xml" value="0.36666666666666664" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_venue.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/activity_view_event.xml" value="0.25" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/custom_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/fragment_event_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/fragment_people_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/fragment_place_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/fragment_tag_search.xml" value="0.36666666666666664" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/itemhorizontal.xml" value="0.5" />
+        <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/search_item_place.xml" value="0.5" />
         <entry key="..\:/Sem7/recreaux/app/src/main/res/layout/venuedetailsverticals.xml" value="0.33" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_add_assignment.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_edit_profile.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_friend_profile.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_generate_qrcode.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_home.xml" value="0.3494791666666667" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_main.xml" value="0.33695652173913043" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_mano.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_my_events_event.xml" value="0.33" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_my_profile.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_my_qrcode.xml" value="0.33" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_navigation.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_scan_qrcode.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_venue.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_view_event.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/activity_view_event_creator.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/fragment__history.xml" value="0.33" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/fragment_events.xml" value="0.33" />
-        <entry key="..\:/Users/PC/recreaux/app/src/main/res/layout/friend.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

@@ -1,13 +1,17 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -34,6 +38,7 @@ public class FriendList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_list);
+
         friends=(LinearLayout)findViewById(R.id.LinearFriends);
 
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -46,7 +51,6 @@ public class FriendList extends AppCompatActivity {
         refFriend.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                System.out.println(dataSnapshot.toString());
                 Iterator<DataSnapshot> iter = dataSnapshot.getChildren().iterator();
                 if(dataSnapshot.exists()){
                     while (iter.hasNext()){
@@ -54,15 +58,25 @@ public class FriendList extends AppCompatActivity {
                         FriendId=singleFriend.getKey().toString();
                         if(!FriendId.equals(UserId)){
                             refUser.child(FriendId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @RequiresApi(api = Build.VERSION_CODES.O)
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                                     if(task.isSuccessful() && task.isComplete()){
                                         DataSnapshot snapshot=task.getResult();
+
                                         View view = inflater.inflate(R.layout.friend, friends, false);
                                         ImageView imageView = view.findViewById(R.id.IM_Friend_ProfilePic);
                                         imageView.setImageBitmap(getImage(Base64.getDecoder().decode(snapshot.child("UserImage").getValue().toString())));
                                         TextView textName = view.findViewById(R.id.TV_Friend_Name);
                                         textName.setText(snapshot.child("Username").getValue().toString());
+                                        view.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                Intent intent = new Intent(FriendList.this,OtherProfile.class);
+                                                intent.putExtra("id",snapshot.getKey().toString());
+                                                startActivity(intent);
+                                            }
+                                        });
                                         friends.addView(view);
                                     }
                                 }

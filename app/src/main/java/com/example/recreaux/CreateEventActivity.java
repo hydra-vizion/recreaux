@@ -1,6 +1,7 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -13,6 +14,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.renderscript.ScriptGroup;
@@ -296,6 +298,7 @@ public class CreateEventActivity extends AppCompatActivity {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void saveRecord2(View v) {
         et_CreateEventName = findViewById(R.id.ET_CreateEventName);
         et_CreateEventDate = findViewById(R.id.ET_CreateEventDate);

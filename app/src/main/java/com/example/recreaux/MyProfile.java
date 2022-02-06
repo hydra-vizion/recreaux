@@ -1,11 +1,15 @@
 package com.example.recreaux;
 
+import static com.example.recreaux.hamburger_nav.redirectActivity;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +58,7 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         ImageButton SearchButton=(ImageButton)findViewById(R.id.Btn_OtherProfile_Search);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User userProfile = dataSnapshot.getValue(User.class);
@@ -98,8 +103,8 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         SearchButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(MyProfile.this,FriendList.class);
-                //intent.putExtra("id","Ub7oIFwv88h6INPAWO04s4F9asi2");
+                Intent intent = new Intent(MyProfile.this,SearchTab.class);
+                //intent.putExtra("id","cHAhENbuYlP7wvVXq22JNoffYdw2");
                 startActivity(intent);
             }
         });
@@ -128,6 +133,8 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(MyProfile.this,Login.class));
     }
+
+    public void ClickMenu(View view){redirectActivity(this,hamburger_nav.class);}
 
 
 }

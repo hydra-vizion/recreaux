@@ -1,6 +1,7 @@
 package com.example.recreaux;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -57,6 +59,7 @@ public class EditProfile extends AppCompatActivity {
 
 
         reff.addListenerForSingleValueEvent(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.child("Bio").exists()){
@@ -65,6 +68,8 @@ public class EditProfile extends AppCompatActivity {
                     email=dataSnapshot.child("email").getValue().toString();
                 }
                 else{
+                    Bitmap icon= getImage(Base64.getDecoder().decode(dataSnapshot.child("UserImage").getValue().toString()));
+                    btnProfPic.setImageBitmap(icon);
                     userNickname.setText(dataSnapshot.child("Username").getValue().toString());
                     userResidence.setText(dataSnapshot.child("Residence").getValue().toString());
                     userInterests.setText(dataSnapshot.child("Interests").getValue().toString());
@@ -91,9 +96,11 @@ public class EditProfile extends AppCompatActivity {
 
 
         btnConfirm.setOnClickListener(new View.OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view){
-                 String s = Base64.getEncoder().encodeToString(getBytes(imageicon));
+
+                 String s = Base64.getEncoder().encodeToString(getBytes(scaleCenterCrop(imageicon,btnProfPic.getHeight(),btnProfPic.getWidth())));
 
                  User user = new User(userFullName.getText().toString().trim(),
                          userNickname.getText().toString().trim(),
